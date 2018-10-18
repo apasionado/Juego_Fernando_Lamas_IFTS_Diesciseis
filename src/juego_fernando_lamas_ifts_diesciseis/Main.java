@@ -5,6 +5,12 @@
  */
 package juego_fernando_lamas_ifts_diesciseis;
 
+import ifts16.pp.juego.entidades.LugarBase;
+import ifts16.pp.juego.sistemas.IOBase;
+import ifts16.pp.juego.sistemas.RepositorioPrincipal;
+import java.awt.EventQueue;
+import juego_fernando_lamas_ifts_diesciseis.Mundo.Fabrica;
+import juego_fernando_lamas_ifts_diesciseis.Eventos.Navegacion;
 /**
  *
  * @author Fernando Lamas
@@ -49,11 +55,16 @@ breve que explique de qué se encarga, principalmente explicitando el o
 los algoritmos que se encuentren en sus métodos. De cada Sistema se
 deben enumerar las Entidades y Componentes que se encuentren
 involucrados en su tarea.
+     * @param args
      */
     public static void main(String[] args) {
         // TODO code application logic here
         
-        
+                IOBase ventana = new IOBase();
+        EventQueue.invokeLater(ventana);
+        Fabrica.crearLugares();
+        LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("inicio");
+        Navegacion.iniciar(lugarDeInicio);
         
         
         

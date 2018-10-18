@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Mundo;
+package juego_fernando_lamas_ifts_diesciseis.Eventos;
+
+import ifts16.pp.juego.entidades.LugarBase;
 
 /**
  *
  * @author Fernando Lamas
  */
-public class Prueba {
-    
-    
-    /* este es un mundo de prueba*/
-    
+public class Navegacion {
+
+    public static void iniciar(LugarBase lugarDeInicio) {
+        
+    }
     
 }
