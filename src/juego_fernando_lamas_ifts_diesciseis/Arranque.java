@@ -5,6 +5,7 @@
  */
 package juego_fernando_lamas_ifts_diesciseis;
 
+import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
@@ -74,6 +75,7 @@ involucrados en su tarea.
         CreadorDeMundos.crearLugares();
         LugarBase primero = (LugarBase) RepositorioPrincipal.traer("Recepcion");
         
+        Entidad NPCPrincipal = RepositorioPrincipal.traer("Alan");
         
     }
     

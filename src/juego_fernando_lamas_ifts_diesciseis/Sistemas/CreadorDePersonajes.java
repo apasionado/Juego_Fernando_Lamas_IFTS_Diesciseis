@@ -7,9 +7,6 @@ package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
 import ifts16.pp.juego.componentes.Referencia;
 import ifts16.pp.juego.entidades.Entidad;
-import ifts16.pp.juego.entidades.PersonajeAbstracto;
-import ifts16.pp.juego.sistemas.Fabrica;
-import ifts16.pp.juego.sistemas.FabricaAbstracta;
 import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 
@@ -17,7 +14,7 @@ import ifts16.pp.juego.sistemas.RepositorioPrincipal;
  *
  * @author alumno
  */
-public class CreadorDeEntidades extends FabricaPrincipal {
+public class CreadorDePersonajes extends FabricaPrincipal {
     
     
     public static void crearPersonajes(){
@@ -28,11 +25,16 @@ public class CreadorDeEntidades extends FabricaPrincipal {
             public Referencia referencia(String texto) {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
+
+            @Override
+            public Referencia referencia() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
         };
         
         
         //Los NPC serán personajes que odies y compañeros, también personas con vinculos parentales o amorosos
-        nuevaEntidad.setNombre("Alan");
+        nuevaEntidad.setNombre("Enemigo");
         
         nuevaEntidad.activar();
         
@@ -60,6 +62,8 @@ public class CreadorDeEntidades extends FabricaPrincipal {
     public static void crearPersonajeJugador(){
         
         //nombreDelJugador = nombre del jugador humano
+        
+        //QUE DIFERENCIA HAY ENTRE UN JUGADOR HUMANO Y UNO QUE NO EXISTE(NPC)
         
         //quiero que combata, eso es un componente
         
