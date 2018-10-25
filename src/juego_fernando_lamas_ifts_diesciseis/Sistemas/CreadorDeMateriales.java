@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Eventos;
+package juego_fernando_lamas_ifts_diesciseis.Sistemas;
+
+import ifts16.pp.juego.sistemas.FabricaPrincipal;
 
 /**
  *
- * @author Fernando Lamas
+ * @author alumno
  */
-public class Player {
+public class CreadorDeMateriales extends FabricaPrincipal{
+    
+    
     
 }

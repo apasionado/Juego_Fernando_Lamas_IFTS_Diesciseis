@@ -9,13 +9,13 @@ import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
-import juego_fernando_lamas_ifts_diesciseis.Mundo.Fabrica;
-import juego_fernando_lamas_ifts_diesciseis.Eventos.Navegacion;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeMundos;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
 /**
  *
  * @author Fernando Lamas
  */
-public class Main {
+public class Arranque {
 
     /**
 1) El trabajo escrito deberá presentarse como un archivo digital armado con un
@@ -60,13 +60,19 @@ involucrados en su tarea.
     public static void main(String[] args) {
         // TODO code application logic here
         
-                IOBase ventana = new IOBase();
+        IOBase ventana = new IOBase();
         EventQueue.invokeLater(ventana);
-        Fabrica.crearLugares();
+        CreadorDeMundos.crearLugares();
         LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("inicio");
         Navegacion.iniciar(lugarDeInicio);
+        IOBase.mostrarTexto("Bienvenido al juego de la pasión");
+        IOBase.mostrarTexto("Te lo imaginas?");
+        
+        String nombreDelJugador = IOBase.ingresarTexto("Ingresa tu nombre");
         
         
+        CreadorDeMundos.crearLugares();
+        LugarBase primero = (LugarBase) RepositorioPrincipal.traer("Recepcion");
         
         
     }
