@@ -77,8 +77,9 @@ involucrados en su tarea.
         LugarBase primero = (LugarBase) RepositorioPrincipal.traer("Recepcion");
         
         
-        Entidad NPCPrincipal = RepositorioPrincipal.traer("Alan");
-        
+        Entidad EnemigoPrincipal = RepositorioPrincipal.traer("Enemigo1");
+        Entidad EnemigoSegundario = RepositorioPrincipal.traer("Enemigo2");
+        Entidad EnemigoTerceario = RepositorioPrincipal.traer("Enemigo3");
         
         
     }

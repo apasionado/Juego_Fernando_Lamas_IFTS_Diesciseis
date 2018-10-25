@@ -19,8 +19,32 @@ public class CreadorDePersonajes extends FabricaPrincipal {
     
     public static void crearPersonajes(){
         
-        Entidad Personaje = new Entidad() {
+        Entidad Personaje1 = new Entidad() {
           
+            @Override
+            public Referencia referencia(String texto) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public Referencia referencia() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+        
+        Entidad Personaje2 = new Entidad() {
+            @Override
+            public Referencia referencia(String texto) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public Referencia referencia() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+                
+        Entidad Personaje3 = new Entidad() {
             @Override
             public Referencia referencia(String texto) {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -34,16 +58,12 @@ public class CreadorDePersonajes extends FabricaPrincipal {
         
         
         
-        
         //Los NPC serán personajes que odies y compañeros, también personas con vinculos parentales o amorosos
-        Personaje.setNombre("Enemigo");
+        Personaje1.setNombre("Enemigo1");
+
+        RepositorioPrincipal.agregar(Personaje1 , "Enemigo1");
         
         
-        
-        
-       
-        
-        RepositorioPrincipal.agregar(Personaje , "Alan");
         
         /*La idea es que ustedes en su juego hereden de esta fabrica principal y despues pisen este metodo
         

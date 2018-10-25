@@ -18,13 +18,14 @@ public class CreadorDeMundos extends FabricaPrincipal {
         
         LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
         
- 
+        //Como conecto mi mundo con otros mundos
+        recepcion.agregarVecino(habitacionPrincipal.referencia("La habitacion principal"));
+        
         
         
         /*Importar al repositorio principal*/
         RepositorioPrincipal.agregar(recepcion, "Recepcion");
         
-        RepositorioPrincipal.traer("Recepcion");
     }
     
     /* este es un mundo de prueba*/
