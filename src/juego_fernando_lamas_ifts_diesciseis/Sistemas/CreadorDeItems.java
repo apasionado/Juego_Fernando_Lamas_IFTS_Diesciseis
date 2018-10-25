@@ -17,8 +17,11 @@ import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 public class CreadorDeItems extends FabricaPrincipal{
     
 	
-	public void crearItem() {
-    Entidad Item = new Entidad() {
+    public void crearItem() {
+        
+        Entidad Item = new Entidad() 
+        
+        {   
         @Override
         public Referencia referencia(String texto) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -28,13 +31,13 @@ public class CreadorDeItems extends FabricaPrincipal{
         public Referencia referencia() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
-    };
+      };
     
-    Item.setNombre("Grog");
+      Item.setNombre("Grog");
     
-    RepositorioPrincipal.agregar(Item, "Grog");
+      RepositorioPrincipal.agregar(Item, "Grog");
     
     
     
-	}
+    }
 }
