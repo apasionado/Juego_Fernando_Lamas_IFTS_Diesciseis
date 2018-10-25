@@ -5,16 +5,14 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
-import ifts16.pp.juego.entidades.LugarBase;
+import ifts16.pp.juego.sistemas.NavegacionBase;
 
 /**
  *
  * @author Fernando Lamas
  */
-public class Navegacion {
-
-    public static void iniciar(LugarBase lugarDeInicio) {
-        
-    }
+public class Navegacion extends NavegacionBase{
+    
+    
     
 }
