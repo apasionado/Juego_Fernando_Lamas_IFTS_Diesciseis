@@ -19,7 +19,7 @@ public class CreadorDePersonajes extends FabricaPrincipal {
     
     public static void crearPersonajes(){
         
-        Entidad nuevaEntidad = new Entidad() {
+        Entidad Personaje = new Entidad() {
           
             @Override
             public Referencia referencia(String texto) {
@@ -33,12 +33,17 @@ public class CreadorDePersonajes extends FabricaPrincipal {
         };
         
         
+        
+        
         //Los NPC serán personajes que odies y compañeros, también personas con vinculos parentales o amorosos
-        nuevaEntidad.setNombre("Enemigo");
+        Personaje.setNombre("Enemigo");
         
-        nuevaEntidad.activar();
         
-        RepositorioPrincipal.agregar(nuevaEntidad , "Alan");
+        
+        
+       
+        
+        RepositorioPrincipal.agregar(Personaje , "Alan");
         
         /*La idea es que ustedes en su juego hereden de esta fabrica principal y despues pisen este metodo
         

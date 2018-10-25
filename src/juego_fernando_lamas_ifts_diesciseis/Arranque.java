@@ -69,13 +69,17 @@ involucrados en su tarea.
         IOBase.mostrarTexto("Bienvenido al juego de la pasión");
         IOBase.mostrarTexto("Te lo imaginas?");
         
-        String nombreDelJugador = IOBase.ingresarTexto("Ingresa tu nombre");
-        
-        
+        String jugadorHumano = IOBase.ingresarTexto("Ingresa tu nombre");
+        //Ingrese su nombre
+        IOBase.mostrarTexto("Bienvenido " + jugadorHumano);
+                
         CreadorDeMundos.crearLugares();
         LugarBase primero = (LugarBase) RepositorioPrincipal.traer("Recepcion");
         
+        
         Entidad NPCPrincipal = RepositorioPrincipal.traer("Alan");
+        
+        
         
     }
     

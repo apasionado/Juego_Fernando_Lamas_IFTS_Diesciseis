@@ -14,13 +14,15 @@ public class CreadorDeMundos extends FabricaPrincipal {
     
     public static void crearLugares(){
         
-        LugarBase Recepcion = new LugarBase("Recepción", "Ingreso del lugar");
+        LugarBase recepcion = new LugarBase("Recepción", "Ingreso del lugar");
         
-        Recepcion.activar();
+        LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
+        
+ 
         
         
         /*Importar al repositorio principal*/
-        RepositorioPrincipal.agregar(Recepcion, "Recepcion");
+        RepositorioPrincipal.agregar(recepcion, "Recepcion");
         
         RepositorioPrincipal.traer("Recepcion");
     }
