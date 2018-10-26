@@ -67,8 +67,8 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
 
     @Override
     public int cantidad() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        return cantidad;
+            }
 
     @Override
     public int vaciar() {
