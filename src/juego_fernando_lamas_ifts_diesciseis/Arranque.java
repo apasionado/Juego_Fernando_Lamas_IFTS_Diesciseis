@@ -5,12 +5,13 @@
  */
 package juego_fernando_lamas_ifts_diesciseis;
 
+import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeMundos;
-import juego_fernando_lamas_ifts_diesciseis.Eventos.Navegacion;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
 /**
  *
  * @author Fernando Lamas
@@ -68,11 +69,17 @@ involucrados en su tarea.
         IOBase.mostrarTexto("Bienvenido al juego de la pasión");
         IOBase.mostrarTexto("Te lo imaginas?");
         
-        String nombreDelJugador = IOBase.ingresarTexto("Ingresa tu nombre");
-        
-        
+        String jugadorHumano = IOBase.ingresarTexto("Ingresa tu nombre");
+        //Ingrese su nombre
+        IOBase.mostrarTexto("Bienvenido " + jugadorHumano);
+                
         CreadorDeMundos.crearLugares();
         LugarBase primero = (LugarBase) RepositorioPrincipal.traer("Recepcion");
+        
+        
+        Entidad EnemigoPrincipal = RepositorioPrincipal.traer("Enemigo1");
+        Entidad EnemigoSegundario = RepositorioPrincipal.traer("Enemigo2");
+        Entidad EnemigoTerceario = RepositorioPrincipal.traer("Enemigo3");
         
         
     }
