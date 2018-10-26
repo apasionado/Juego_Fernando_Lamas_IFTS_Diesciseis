@@ -29,7 +29,6 @@ public class CreadorDeMundos extends FabricaPrincipal {
         
     }
     
-    /* este es un mundo de prueba*/
     
     
     
