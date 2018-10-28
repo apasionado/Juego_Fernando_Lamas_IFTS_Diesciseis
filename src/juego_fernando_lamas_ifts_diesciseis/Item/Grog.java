@@ -10,12 +10,14 @@ import ifts16.pp.juego.componentes.ParteDelCuerpo;
 import ifts16.pp.juego.componentes.item.DeDefensa;
 import ifts16.pp.juego.componentes.item.Equipable;
 import ifts16.pp.juego.componentes.item.Inventariable;
+import ifts16.pp.juego.utiles.ConOpciones;
+import ifts16.pp.juego.utiles.Opciones;
 
 /**
  *
  * @author Fernando Lamas
  */
-public class Grog extends Componente implements DeDefensa, Inventariable, Equipable{
+public class Grog extends Componente implements DeDefensa, Inventariable, Equipable, ConOpciones{
 
     
     protected int cantidad;
@@ -67,8 +69,8 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
 
     @Override
     public int cantidad() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        return cantidad;
+            }
 
     @Override
     public int vaciar() {
@@ -83,6 +85,16 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
 
     @Override
     public int quitar(int cantidad) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Opciones opciones() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Opciones opciones(String texto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

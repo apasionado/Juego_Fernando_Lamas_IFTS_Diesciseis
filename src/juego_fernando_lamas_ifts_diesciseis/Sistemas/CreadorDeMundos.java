@@ -41,7 +41,6 @@ public class CreadorDeMundos extends FabricaPrincipal {
 >>>>>>> 3aee395ab439815b62b325bb2de4f8aae574ba90
     }
     
-    /* este es un mundo de prueba*/
     
     
     
