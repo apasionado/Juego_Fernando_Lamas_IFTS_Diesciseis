@@ -9,9 +9,12 @@ package juego_fernando_lamas_ifts_diesciseis.Entidades;
  *
  * @author Fernando Lamas
  */
-public class EntidadesHumanas {
-    /*el humano dice hace piensa y apartir de eso interactua con el sistema
+public class Viviente {
     
-    si es necesario revisar el doc "HumanEntity"
+    /* Las entidades vivas vendrian a ser mas los NPC que se desarrollan en el juego
+    a medida que el usuario va interactuando con ellos el NPC responde a cada interactuación
+    
     */
+    
+    
 }

@@ -7,14 +7,14 @@ package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
 import ifts16.pp.juego.componentes.Referencia;
 import ifts16.pp.juego.entidades.Entidad;
-import ifts16.pp.juego.sistemas.FabricaPrincipal;
+import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 
 /**
  *
  * @author alumno
  */
-public class CreadorDePersonajes extends FabricaPrincipal {
+public class CreadorDePersonajes extends PersonajeAbstracto {
     
     
     public static void crearPersonajes(){
@@ -91,6 +91,8 @@ public class CreadorDePersonajes extends FabricaPrincipal {
         //QUE DIFERENCIA HAY ENTRE UN JUGADOR HUMANO Y UNO QUE NO EXISTE(NPC)
         
         //quiero que combata, eso es un componente
+        
+        
         
         
     }
