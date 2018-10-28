@@ -6,21 +6,35 @@
 package juego_fernando_lamas_ifts_diesciseis.Entidades;
 
 import ifts16.pp.juego.componentes.Componente;
+import ifts16.pp.juego.componentes.ReferenciaItem;
+import ifts16.pp.juego.componentes.Referencias;
+import ifts16.pp.juego.componentes.item.Inventariable;
+import ifts16.pp.juego.componentes.personaje.Cargado;
+import ifts16.pp.juego.componentes.personaje.ConInventario;
+import ifts16.pp.juego.componentes.personaje.ConMision;
 import ifts16.pp.juego.componentes.personaje.Experimentado;
 import ifts16.pp.juego.componentes.personaje.Jugador;
+import ifts16.pp.juego.componentes.personaje.Saludable;
+import ifts16.pp.juego.entidades.ItemAbstracto;
+import java.util.UUID;
 
 /**
  *
  * @author Fernando Lamas
  */
-public class Humana extends Componente implements Jugador, Experimentado{
+public class Humana extends Componente implements Jugador, Experimentado, Saludable, Cargado, ConInventario,
+                                                  ConMision{
 
     protected int nivelActual;
     protected int nivelProximo;
     protected int nivelMinimo;
     protected int nivelMaximo;
     protected int experienciaActual;
+    protected int experienciaNivelProximo;
     
+    //Para inicializar las variables "ACTUAL" ver como hizo el profesor en combatiente
+    
+    //TODA LA EXPERIENCIA DEL JUGADOR
     
     @Override
     public boolean esJugador() {
@@ -70,6 +84,8 @@ public class Humana extends Componente implements Jugador, Experimentado{
 
     @Override
     public int experienciaNivelProximo() {
+        this.experienciaNivelProximo = this.experienciaActual * 2;
+        return this.experienciaNivelProximo;
     }
 
     @Override
@@ -79,21 +95,163 @@ public class Humana extends Componente implements Jugador, Experimentado{
 
     @Override
     public int subirNivel() {
+        this.nivelActual = this.nivelProximo;
+        return this.nivelActual;
     }
 
     @Override
     public int subirNivel(int cantidad) {
+        this.nivelActual = this.nivelProximo;
+        return this.nivelActual;
     }
 
     @Override
     public int bajarNivel() {
+        this.nivelActual = this.nivelActual - 1;
+        return this.nivelActual;
     }
 
     @Override
     public int bajarNivel(int cantidad) {
+        this.nivelActual = this.nivelActual - 1;
+        return this.nivelActual;
     }
-    /*el humano dice hace piensa y apartir de eso interactua con el sistema
+ 
+    //TODA LA SALUD DEL JUGADOR
+
+    protected int saludActual;
+    protected int saludMaxima;
+    //daniar maximo se supone es el daño maximo que puede recibir el jugador
+    protected int daniarMaximo;
+    protected int daniar;
     
-    si es necesario revisar el doc "HumanEntity"
-    */
+    @Override
+    public int saludActual() {
+        return saludActual;
+    }
+
+    @Override
+    public int saludMaxima() {
+        this.saludMaxima = 10;
+        return this.saludMaxima;
+    }
+
+    @Override
+    public int curarMaximo() {
+        this.saludActual = this.saludMaxima - this.saludActual;
+        return this.saludActual;
+    }
+
+    @Override
+    public int daniarMaximo() {
+        this.daniar = this.saludActual;
+        return this.daniar;
+    }
+
+    @Override
+    public int curar(int puntos) {
+        this.saludActual = this.saludActual + this.curar(puntos);
+        return this.saludActual;
+    }
+
+    @Override
+    public int daniar(int puntos) {
+        this.saludActual = this.saludActual - this.daniar(puntos);
+        return this.saludActual;
+    }
+  
+    //TODO SOBRE CARGADO
+
+    protected int pesoActual;
+    protected int pesoMaximo;
+    
+    
+    @Override
+    public int pesoActual() {
+        return this.pesoActual;
+    }
+
+    @Override
+    public int pesoMaximo() {
+        this.pesoMaximo = 10;
+        return this.pesoMaximo;
+    }
+
+    @Override
+    public boolean puedeCargar(int peso) {
+        return true;
+    }
+
+    @Override
+    public int agregarPeso(int peso) {
+        this.pesoActual = this.pesoActual + 1;
+        return this.pesoActual;
+    }
+
+    @Override
+    public int quitarPeso(int peso) {
+        this.pesoActual = this.pesoActual - 1;
+        return this.pesoActual;
+    }
+
+    @Override
+    public int aumentarPesoMaximo(int peso) {
+        this.pesoMaximo = this.pesoMaximo + peso;
+        return this.pesoMaximo;
+    }
+
+    @Override
+    public int disminuirPesoMaximo(int peso) {
+        this.pesoMaximo = this.pesoMaximo - peso;
+        return this.pesoMaximo;
+    }
+
+    
+    //TODO SOBRE INVENTARIO
+    
+    
+    
+    @Override
+    public boolean agregar(Inventariable item) {
+    }
+
+    @Override
+    public boolean quitar(UUID id) {
+    }
+
+    @Override
+    public boolean reemplazar(UUID id, Inventariable item) {
+    }
+
+    @Override
+    public int agregarCantidad(UUID id, int cantidad) {
+    }
+
+    @Override
+    public int quitarCantidad(UUID id, int cantidad) {
+    }
+
+    @Override
+    public Referencias<ReferenciaItem> items() {
+    }
+
+    @Override
+    public ItemAbstracto item(UUID id) {
+    }
+
+    @Override
+    public void darMision(ReferenciaItem mision) {
+    }
+
+    @Override
+    public ReferenciaItem mision() {
+    }
+
+    @Override
+    public boolean completa() {
+    }
+
+    @Override
+    public void completar() {
+    }
 }
