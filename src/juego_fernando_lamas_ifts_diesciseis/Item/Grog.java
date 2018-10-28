@@ -10,6 +10,8 @@ import ifts16.pp.juego.componentes.ParteDelCuerpo;
 import ifts16.pp.juego.componentes.item.DeDefensa;
 import ifts16.pp.juego.componentes.item.Equipable;
 import ifts16.pp.juego.componentes.item.Inventariable;
+import ifts16.pp.juego.componentes.item.Pesado;
+import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.utiles.ConOpciones;
 import ifts16.pp.juego.utiles.Opciones;
 
@@ -17,87 +19,119 @@ import ifts16.pp.juego.utiles.Opciones;
  *
  * @author Fernando Lamas
  */
-public class Grog extends Componente implements DeDefensa, Inventariable, Equipable, ConOpciones{
+public class Grog extends Componente implements DeDefensa, Inventariable, Equipable, Pesado, ConOpciones{
 
+
+    //TODO SOBRE DEFENSA 
     
-    protected int cantidad;
+    protected int bonoDefensa;
+    protected int bonoResistencia;
     
-    //si al obtener el grog no tiene valores sacar el void
-    void Obtenido() {
-        this.cantidad = 5;
-    }
     
     @Override
     public int bonoDefensa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.bonoDefensa;
     }
 
     @Override
     public int bonoResistencia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.bonoResistencia;
     }
 
     @Override
     public int aumentarBonoDefensa(int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.bonoDefensa = 0;
+        return this.bonoDefensa;
     }
 
     @Override
-    public int disminuirBonoDefensa(int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int disminuirBonoDefensa(int cantidad) {       
+        this.bonoDefensa = 0;
+        return this.bonoDefensa;
     }
 
     @Override
     public int aumentarBonoResistencia(int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.bonoResistencia = this.bonoResistencia + 1;
+        return this.bonoResistencia;
     }
 
     @Override
     public int disminuirBonoResistencia(int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.bonoResistencia = this.bonoResistencia - 1;
+        return this.bonoResistencia;
     }
-
-    @Override
-    public ParteDelCuerpo seUsaEn() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    
+    //TODO SOBRE EQUIPABLE
+    
+    protected int cantidad;
+    protected ParteDelCuerpo Boca;
+   
 
     @Override
     public void lugarDeUso(ParteDelCuerpo parte) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IOBase.mostrarTexto("Se usa en " + parte.ManoDerecha);
+    }
+    
+    @Override
+    public ParteDelCuerpo seUsaEn() {
+        return this.Boca;
     }
 
+    //TODO de inventariable
+    
     @Override
     public int cantidad() {
-        return cantidad;
-            }
+        return this.cantidad;
+    }
 
     @Override
     public int vaciar() {
         this.cantidad = 0;
-        return cantidad;
+        return this.cantidad;
     }
 
     @Override
     public int agregar(int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cantidad = cantidad + 1;
+        return cantidad;
     }
 
     @Override
     public int quitar(int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cantidad = cantidad - 1;
+        return cantidad;
     }
 
+    //TODO sobre opciones
+    
     @Override
     public Opciones opciones() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        opciones(lista); 
     }
 
     @Override
     public Opciones opciones(String texto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        texto.charAt(1);
+        texto = "Usar grog";
+        
+        return texto;
     }
-    
-    
+
+
+    @Override
+    public int peso() {
+    }
+
+    @Override
+    public int agregarPeso(int peso) {
+    }
+
+    @Override
+    public int quitarPeso(int peso) {
+    }
+
+
     
 }

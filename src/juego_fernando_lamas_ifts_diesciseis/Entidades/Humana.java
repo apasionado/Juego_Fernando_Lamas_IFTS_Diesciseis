@@ -213,6 +213,7 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
     
     @Override
     public boolean agregar(Inventariable item) {
+        
     }
 
     @Override
