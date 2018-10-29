@@ -65,7 +65,7 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
     
     //TODO SOBRE EQUIPABLE
     
-    protected int cantidad;
+   
     protected ParteDelCuerpo Boca;
    
 
@@ -80,6 +80,8 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
     }
 
     //TODO de inventariable
+    
+     protected int cantidad;
     
     @Override
     public int cantidad() {
@@ -105,31 +107,81 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
     }
 
     //TODO sobre opciones
+    Opciones GrogOpciones = new Opciones();
     
     @Override
     public Opciones opciones() {
-        opciones(lista); 
+        
+        //no entendi esto???
+        GrogOpciones.agregar(op);
+        
+        GrogOpciones.agregar("Beber", "Bebe el Grog");
+        GrogOpciones.agregar("Tirar", "Tira el grog al suelo");
+        GrogOpciones.agregar("Observar", "Observa la descripción del objeto");
+        
+        return GrogOpciones;
+        
     }
 
     @Override
     public Opciones opciones(String texto) {
-        texto.charAt(1);
-        texto = "Usar grog";
         
-        return texto;
+        String numElegido = GrogOpciones.comandoElegido(IOBase.ingresarEntero("Ingrese un número disponible en la lista"));
+        for(int i = 0; i < texto.indexOf(numElegido); i++){
+        
+        if(numElegido == "0"){
+            
+            this.quitar(1);
+            
+            if(!(this.cantidad == 0)){
+                texto = "Haz bebido un poco de Grog";
+            
+            }else{
+                texto = "¡Has bebido todo el Grog!";
+            }
+        }
+            
+        if(numElegido == "1"){
+            this.vaciar();
+            texto = "¿Te volviste loco? ¡Haz tirado todo el Grog!";
+        }
+        
+        if(numElegido == "2"){
+            
+        
+        texto = "El grog es una bebida hecha de agua caliente azucarada, mezclada con un licor, "
+                + "generalmente ron, aunque también kirsch, coñac u otros. "
+                + "Suele contener algún aromatizante, por ejemplo, limón.";
+        GrogOpciones.setMensaje(texto);
+        
+        }
+        
+        }
+        //chequear si hay que returnear el grogopciones o el texto (depende la necesidad)
+        return GrogOpciones;
     }
 
 
+    //TODO SOBRE PESO
+    
+    protected int pesoActual;
+    
     @Override
     public int peso() {
+        return this.pesoActual;
     }
 
     @Override
     public int agregarPeso(int peso) {
+    
+        this.pesoActual = this.pesoActual + peso;
+        return this.pesoActual;
     }
 
     @Override
     public int quitarPeso(int peso) {
+        this.pesoActual = this.pesoActual - peso;
+        return this.pesoActual;
     }
 
 

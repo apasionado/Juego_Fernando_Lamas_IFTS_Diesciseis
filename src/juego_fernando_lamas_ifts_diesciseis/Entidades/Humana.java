@@ -16,6 +16,7 @@ import ifts16.pp.juego.componentes.personaje.Experimentado;
 import ifts16.pp.juego.componentes.personaje.Jugador;
 import ifts16.pp.juego.componentes.personaje.Saludable;
 import ifts16.pp.juego.entidades.ItemAbstracto;
+import ifts16.pp.juego.sistemas.IOBase;
 import java.util.UUID;
 
 /**
@@ -210,36 +211,77 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
     //TODO SOBRE INVENTARIO
     
     
+
     
     @Override
     public boolean agregar(Inventariable item) {
+        
+        if(!(item.getClass() == null)){
+            return true;
+        }else{
+            return false;
+        }
         
     }
 
     @Override
     public boolean quitar(UUID id) {
+        if(!(id.getClass() == null)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
     public boolean reemplazar(UUID id, Inventariable item) {
+        
+        //COMO SE USA ESTO?
+        return false;
+        
     }
 
     @Override
     public int agregarCantidad(UUID id, int cantidad) {
+        
+        if(!(this.item(id) == null)){
+            
+            cantidad = cantidad + 1;
+            
+        }else{
+            
+        }
+        return cantidad;
     }
 
     @Override
     public int quitarCantidad(UUID id, int cantidad) {
+        
+        if(!(this.item(id) == null)){
+            
+        cantidad = cantidad + 1;
+            
+        }else{
+            
+        }
+        return cantidad;
     }
-
+    
+    Referencias RefInventario = new Referencias();
+    
     @Override
     public Referencias<ReferenciaItem> items() {
+        //Como se usan las referencias?
     }
 
     @Override
     public ItemAbstracto item(UUID id) {
+        return this.item(id);
     }
 
+    
+    // TODO SOBRE MISIONERO
+    
     @Override
     public void darMision(ReferenciaItem mision) {
     }
