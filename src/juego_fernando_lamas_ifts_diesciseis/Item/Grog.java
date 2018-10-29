@@ -113,7 +113,7 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
     public Opciones opciones() {
         
         //no entendi esto???
-        GrogOpciones.agregar(op);
+        //  GrogOpciones.agregar(op);
         
         GrogOpciones.agregar("Beber", "Bebe el Grog");
         GrogOpciones.agregar("Tirar", "Tira el grog al suelo");
