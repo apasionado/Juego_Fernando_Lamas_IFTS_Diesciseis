@@ -282,8 +282,12 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
     
     // TODO SOBRE MISIONERO
     
+    //ver como engancharlo con misiones en situaciones especificas
+    //probablemente con if de por medio
+    
     @Override
     public void darMision(ReferenciaItem mision) {
+        
     }
 
     @Override

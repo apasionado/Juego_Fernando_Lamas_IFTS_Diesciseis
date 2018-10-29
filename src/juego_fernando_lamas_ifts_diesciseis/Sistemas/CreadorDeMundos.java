@@ -14,7 +14,6 @@ public class CreadorDeMundos extends FabricaPrincipal {
     
     public static void crearLugares(){
         
-<<<<<<< HEAD
         LugarBase Recepcion = new LugarBase("Recepción", "Ingreso del lugar");
         
         Recepcion.activar();
@@ -24,7 +23,7 @@ public class CreadorDeMundos extends FabricaPrincipal {
         RepositorioPrincipal.agregar(Recepcion, "Recepcion");
         
         RepositorioPrincipal.traer("Recepcion");
-=======
+
         LugarBase recepcion = new LugarBase("Recepción", "Ingreso del lugar");
         
         
@@ -38,7 +37,6 @@ public class CreadorDeMundos extends FabricaPrincipal {
         /*Importar al repositorio principal*/
         RepositorioPrincipal.agregar(recepcion, "Recepcion");
         
->>>>>>> 3aee395ab439815b62b325bb2de4f8aae574ba90
     }
     
     
