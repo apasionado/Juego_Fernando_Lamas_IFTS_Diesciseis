@@ -16,7 +16,6 @@ import ifts16.pp.juego.componentes.personaje.Experimentado;
 import ifts16.pp.juego.componentes.personaje.Jugador;
 import ifts16.pp.juego.componentes.personaje.Saludable;
 import ifts16.pp.juego.entidades.ItemAbstracto;
-import ifts16.pp.juego.sistemas.IOBase;
 import java.util.UUID;
 
 /**
