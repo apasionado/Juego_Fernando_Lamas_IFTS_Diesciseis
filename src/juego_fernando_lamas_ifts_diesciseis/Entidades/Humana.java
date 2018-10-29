@@ -34,6 +34,8 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
     
     //Para inicializar las variables "ACTUAL" ver como hizo el profesor en combatiente
     
+    
+    
     //TODA LA EXPERIENCIA DEL JUGADOR
     
     @Override

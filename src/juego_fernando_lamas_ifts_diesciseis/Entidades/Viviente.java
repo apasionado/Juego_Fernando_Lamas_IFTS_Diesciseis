@@ -19,6 +19,8 @@ public class Viviente extends Componente implements Hablador{
     
     
     protected String texto;
+    
+    
     public String presentarse(CreadorDePersonajes personaje){
         this.texto = "¡Hola! Soy " + personaje.getNombre();
         return this.texto;
