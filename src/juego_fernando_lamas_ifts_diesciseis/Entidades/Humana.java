@@ -16,7 +16,6 @@ import ifts16.pp.juego.componentes.personaje.Experimentado;
 import ifts16.pp.juego.componentes.personaje.Jugador;
 import ifts16.pp.juego.componentes.personaje.Saludable;
 import ifts16.pp.juego.entidades.ItemAbstracto;
-import ifts16.pp.juego.sistemas.IOBase;
 import java.util.UUID;
 
 /**
@@ -284,6 +283,8 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
     
     //ver como engancharlo con misiones en situaciones especificas
     //probablemente con if de por medio
+    
+
     
     @Override
     public void darMision(ReferenciaItem mision) {
