@@ -20,22 +20,15 @@ public class CreadorDeLugares extends FabricaPrincipal {
         
         recepcion.activar();
         
-        
-        
         /*Importar al repositorio principal*/
         RepositorioPrincipal.agregar(recepcion, "Recepcion");
+        CreadorDeLugares.agregarIdLugar(recepcion.getId());
         
-        RepositorioPrincipal.traer("Recepcion");
-        
-       
         LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
         
         //Como conecto mi mundo con otros mundos
         recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
-        recepcion.agregarHablador(nuevoPersonaje.referencia("Elsa Humerio"));
-        
-        /*Importar al repositorio principal*/
-        RepositorioPrincipal.agregar(recepcion, "Recepcion");
+        recepcion.agregarHablador(nuevoPersonaje.referencia("Elsa Humerio una viajera desconocida"));
         
     }
     
