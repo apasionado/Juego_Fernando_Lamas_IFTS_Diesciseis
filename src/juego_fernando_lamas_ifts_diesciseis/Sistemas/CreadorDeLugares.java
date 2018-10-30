@@ -10,7 +10,7 @@ import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 
 
-public class CreadorDeMundos extends FabricaPrincipal {
+public class CreadorDeLugares extends FabricaPrincipal {
     
     public static void crearLugares(){
         

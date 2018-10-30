@@ -20,7 +20,7 @@ import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 public class CreadorDePersonajes extends PersonajeAbstracto {
     
     
-    public void crearPersonajes(){
+    public static void crearPersonajes(){
         
         
         
@@ -43,7 +43,7 @@ public class CreadorDePersonajes extends PersonajeAbstracto {
     
         npc1.setNombre("Elsa humerio");
 
-        RepositorioPrincipal.agregar(npc1 , "Viviente1");
+        RepositorioPrincipal.agregar(npc1 , "npc1");
     }
     
     public static void crearPersonajeJugador(){
