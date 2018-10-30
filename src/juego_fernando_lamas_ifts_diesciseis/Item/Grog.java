@@ -135,7 +135,7 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
         String numElegido = GrogOpciones.comandoElegido(IOBase.ingresarEntero("Ingrese un número disponible en la lista"));
         for(int i = 0; i < texto.indexOf(numElegido); i++){
         
-        if(numElegido == "0"){
+        if(numElegido.equals("0")){
             
             this.quitar(1);
             
@@ -147,12 +147,12 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
             }
         }
             
-        if(numElegido == "1"){
+        if(numElegido.equals("1")){
             this.vaciar();
             texto = "¿Te volviste loco? ¡Haz tirado todo el Grog!";
         }
         
-        if(numElegido == "2"){
+        if(numElegido.equals("2")){
             
         
         texto = "El grog es una bebida hecha de agua caliente azucarada, mezclada con un licor, "
