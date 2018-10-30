@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Entidades;
+package juego_fernando_lamas_ifts_diesciseis.Componente;
 
 import ifts16.pp.juego.componentes.Componente;
 import ifts16.pp.juego.componentes.personaje.Hablador;
@@ -19,6 +19,8 @@ public class Viviente extends Componente implements Hablador{
     
     
     protected String texto;
+    
+    
     public String presentarse(CreadorDePersonajes personaje){
         this.texto = "¡Hola! Soy " + personaje.getNombre();
         return this.texto;

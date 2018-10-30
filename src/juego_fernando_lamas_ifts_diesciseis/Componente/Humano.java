@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Entidades;
+package juego_fernando_lamas_ifts_diesciseis.Componente;
 
 import ifts16.pp.juego.componentes.Componente;
 import ifts16.pp.juego.componentes.ReferenciaItem;
@@ -16,13 +16,16 @@ import ifts16.pp.juego.componentes.personaje.Experimentado;
 import ifts16.pp.juego.componentes.personaje.Jugador;
 import ifts16.pp.juego.componentes.personaje.Saludable;
 import ifts16.pp.juego.entidades.ItemAbstracto;
+import ifts16.pp.juego.sistemas.IOBase;
+import java.awt.Color;
+import java.util.Random;
 import java.util.UUID;
 
 /**
  *
  * @author Fernando Lamas
  */
-public class Humana extends Componente implements Jugador, Experimentado, Saludable, Cargado, ConInventario,
+public class Humano extends Componente implements Jugador, Experimentado, Saludable, Cargado, ConInventario,
                                                   ConMision{
 
     protected int nivelActual;
@@ -31,8 +34,26 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
     protected int nivelMaximo;
     protected int experienciaActual;
     protected int experienciaNivelProximo;
-    
+    protected Random azar;
     //Para inicializar las variables "ACTUAL" ver como hizo el profesor en combatiente
+    
+    //INICIALIZAR VARIABLES
+ 
+    
+
+    Humano() {
+        this.nivelActual = 0;
+        this.nivelMaximo = 10;
+        this.nivelMinimo = 0;
+        this.experienciaActual = 0;
+        this.saludMaxima = 10;
+        this.saludActual = this.saludMaxima;
+        this.pesoActual = 0;
+        this.pesoMaximo = 10;
+        this.azar = new Random();
+        
+    }
+    
     
     //TODA LA EXPERIENCIA DEL JUGADOR
     
@@ -55,29 +76,32 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
 
     @Override
     public int nivelMinimo() {
-        this.nivelMinimo = 0;
+        
         return nivelMinimo;
     }
 
     @Override
     public int nivelMaximo() {
-        this.nivelMaximo = 10;
+        
         return this.nivelMaximo;
     }
 
     @Override
     public int experiencia() {
+        
         return experienciaActual;
     }
 
     @Override
     public int agregarExperiencia(int cantidad) {
+        // ver  como introducir la experiencia en cantidad probablemente al azar
         this.experienciaActual = this.experienciaActual + cantidad;
         return this.experienciaActual;
     }
 
     @Override
     public int quitarExperiencia(int cantidad) {
+        // ver  como introducir la experiencia en cantidad probablemente al azar
         this.experienciaActual = this.experienciaActual - cantidad;
         return this.experienciaActual;
     }
@@ -132,7 +156,6 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
 
     @Override
     public int saludMaxima() {
-        this.saludMaxima = 10;
         return this.saludMaxima;
     }
 
@@ -150,14 +173,28 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
 
     @Override
     public int curar(int puntos) {
-        this.saludActual = this.saludActual + this.curar(puntos);
+        puntos = azar.nextInt(10);
+        if(!((this.saludActual + puntos) < this.curarMaximo())){
+            IOBase.mostrarTexto("Te haz curado al máximo");
+        return this.curarMaximo();
+        }else{
+        this.saludActual = this.saludActual + puntos;
+            IOBase.mostrarTexto("Te haz curado " + puntos + " puntos de vida");
         return this.saludActual;
+        }
     }
 
     @Override
     public int daniar(int puntos) {
-        this.saludActual = this.saludActual - this.daniar(puntos);
+        puntos = azar.nextInt(6);
+        if(!((this.saludActual + puntos) < this.daniarMaximo())){
+            IOBase.mostrarTexto("Golpe CRITICO", Color.red, Color.white);
+        return this.daniarMaximo();
+        }else{
+        this.saludActual = this.saludActual - puntos;
+        IOBase.mostrarTexto("Haz daniado "+puntos+ " a tu oponente");
         return this.saludActual;
+        }
     }
   
     //TODO SOBRE CARGADO
@@ -173,7 +210,6 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
 
     @Override
     public int pesoMaximo() {
-        this.pesoMaximo = 10;
         return this.pesoMaximo;
     }
 
@@ -184,8 +220,15 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
 
     @Override
     public int agregarPeso(int peso) {
-        this.pesoActual = this.pesoActual + 1;
+        peso = 1;
+        if(!((peso + this.pesoActual) > this.pesoMaximo)){
+            IOBase.mostrarTexto("Estas muy cargado");
         return this.pesoActual;
+        }else{
+        this.pesoActual = this.pesoActual + peso;
+        return this.pesoActual; 
+        }
+        
     }
 
     @Override
@@ -202,8 +245,14 @@ public class Humana extends Componente implements Jugador, Experimentado, Saluda
 
     @Override
     public int disminuirPesoMaximo(int peso) {
-        this.pesoMaximo = this.pesoMaximo - peso;
+        if(!(this.pesoMaximo > 1)){
+        IOBase.mostrarTexto("No puede tener un peso máximo menor que 1");
         return this.pesoMaximo;
+        }else{
+        this.pesoMaximo = this.pesoMaximo - peso;
+        return this.pesoMaximo;  
+        }
+       
     }
 
     
