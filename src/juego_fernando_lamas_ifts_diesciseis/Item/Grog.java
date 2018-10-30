@@ -27,6 +27,10 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
     protected int bonoDefensa;
     protected int bonoResistencia;
     
+    Grog(){
+        
+    }
+    
     
     @Override
     public int bonoDefensa() {
@@ -40,6 +44,8 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
 
     @Override
     public int aumentarBonoDefensa(int cantidad) {
+        this.cantidad = 1;
+        IOBase.mostrarTexto("Tu defensa aumento en " + cantidad);
         this.bonoDefensa = 0;
         return this.bonoDefensa;
     }
@@ -81,7 +87,7 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
 
     //TODO de inventariable
     
-     protected int cantidad;
+    protected int cantidad;
     
     @Override
     public int cantidad() {
