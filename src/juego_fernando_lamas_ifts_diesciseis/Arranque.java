@@ -10,7 +10,8 @@ import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
-import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeMundos;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeLugares;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDePersonajes;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
 /**
  *
@@ -24,11 +25,17 @@ public class Arranque {
         
         IOBase ventana = new IOBase();
         EventQueue.invokeLater(ventana);
-        CreadorDeMundos.crearLugares();
-        LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("inicio");
+        CreadorDeLugares.crearLugares();
+        LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("Recepcion");
         Navegacion.iniciar(lugarDeInicio);
-        
-        
+        CreadorDePersonajes.crearPersonajes();
+        if(!(RepositorioPrincipal.existe("npc1"))){
+            IOBase.mostrarTexto("ERROR: No se pudo encontrar al npc1");
+        }else{
+            Entidad primerPersonajeViviente = RepositorioPrincipal.traer("npc1");
+            primerPersonajeViviente.activar();
+        }
+            
     }
     
     

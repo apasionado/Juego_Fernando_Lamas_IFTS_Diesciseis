@@ -8,6 +8,7 @@
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
 import ifts16.pp.juego.componentes.Referencia;
+import ifts16.pp.juego.componentes.ReferenciaPersonaje;
 import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import static ifts16.pp.juego.entidades.Tipo.Personaje;
@@ -20,30 +21,33 @@ import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 public class CreadorDePersonajes extends PersonajeAbstracto {
     
     
-    public void crearPersonajes(){
+    public static void crearPersonajes(){
         
         
         
         Entidad npc1 = new Entidad() {
             
-            //que typo necesita una referencia para no tener q ser null
-            Referencia npc1ref = new Referencia(this.getId(),Personaje,this.getNombre()) {};
+            
+            ReferenciaPersonaje npc1RefPer = new ReferenciaPersonaje(this.getId(),this.getNombre());
+            
             
             @Override
             public Referencia referencia(String texto) {
                 texto = "Elsa Humerio es la referencia";
-                return npc1ref;
+                return npc1RefPer;
             }
 
             @Override
             public Referencia referencia() {
-                return npc1ref;
+                return npc1RefPer;
             } 
         };
     
         npc1.setNombre("Elsa humerio");
 
-        RepositorioPrincipal.agregar(npc1 , "Viviente1");
+        RepositorioPrincipal.agregar(npc1 , "npc1");
+        
+        
     }
     
     public static void crearPersonajeJugador(){

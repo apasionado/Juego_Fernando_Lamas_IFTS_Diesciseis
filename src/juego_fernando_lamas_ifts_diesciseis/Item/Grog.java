@@ -13,7 +13,11 @@ import ifts16.pp.juego.componentes.item.Inventariable;
 import ifts16.pp.juego.componentes.item.Pesado;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.utiles.ConOpciones;
+import ifts16.pp.juego.utiles.MapaDeOpciones;
+import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
+import java.awt.Color;
+import java.util.UUID;
 
 /**
  *
@@ -113,6 +117,69 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
     }
 
     //TODO sobre opciones
+    
+    Opciones listaDeOpciones = new Opciones();
+    
+  
+    //mostrar al profesor como hice estas opciones
+    @Override
+    public Opciones opciones() {
+        
+        
+        
+        listaDeOpciones.agregar("1", "Beber");
+        listaDeOpciones.agregar("2","Tirar");
+        listaDeOpciones.agregar("3", "Observar");
+        
+        
+        for(int i = 0; i > listaDeOpciones.cantidad(); i++){
+        
+            String numElegido = IOBase.ingresarTexto("Ingrese un numero del 1 al 3 para las siguientes opciones");
+            
+            if(numElegido.equals("1")){
+            
+                this.quitar(1);
+            
+            if(!(this.cantidad == 0)){
+                IOBase.mostrarTexto("Haz bebido un poco de Grog", Color.yellow, Color.white);
+            
+            }else{
+               IOBase.mostrarTexto("¡Has bebido todo el Grog!", Color.yellow, Color.white);
+            }
+        }
+            
+        if(numElegido.equals("2")){
+            this.vaciar();
+            IOBase.mostrarTexto("¿Te volviste loco? ¡Haz tirado todo el Grog!", Color.yellow, Color.white);
+        }
+        
+        if(numElegido.equals("3")){
+            
+        
+        IOBase.mostrarTexto("El grog es una bebida hecha de agua caliente azucarada, mezclada con un licor, "
+                + "generalmente ron, aunque también kirsch, coñac u otros. "
+                + "Suele contener algún aromatizante, por ejemplo, limón.", Color.yellow, Color.white);
+        
+        
+        }
+        
+        
+            
+            
+        }
+        
+        
+        return listaDeOpciones;
+    }
+
+    @Override
+    public Opciones opciones(String texto) {
+    }
+
+    
+    
+    
+    /*
     Opciones GrogOpciones = new Opciones();
     
     @Override
@@ -120,6 +187,10 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
         
         //no entendi esto???
         //  GrogOpciones.agregar(op);
+        
+        
+        
+        GrogOpciones.cantidad();
         
         GrogOpciones.agregar("Beber", "Bebe el Grog");
         GrogOpciones.agregar("Tirar", "Tira el grog al suelo");
@@ -168,6 +239,8 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
     }
 
 
+    */
+
     //TODO SOBRE PESO
     
     protected int pesoActual;
@@ -190,6 +263,4 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
         return this.pesoActual;
     }
 
-
-    
 }
