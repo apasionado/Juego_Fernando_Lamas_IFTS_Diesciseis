@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Mundo;
+package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
 /**
  *
- * @author Fernando Lamas
+ * @author Heresy
  */
-public class MundoActual {
+public class CreadorDeCombates {
     
 }

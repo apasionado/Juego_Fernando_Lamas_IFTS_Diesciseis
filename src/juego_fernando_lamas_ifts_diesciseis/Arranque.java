@@ -10,15 +10,39 @@ import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
-import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeMundos;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeLugares;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDePersonajes;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
 /**
  *
  * @author Fernando Lamas
  */
 public class Arranque {
+     /*
+     * @param args
+     */
+    public static void main(String[] args) {
+        
+        IOBase ventana = new IOBase();
+        EventQueue.invokeLater(ventana);
+        CreadorDeLugares.crearLugares();
+        LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("Recepcion");
+        Navegacion.iniciar(lugarDeInicio);
+        CreadorDePersonajes.crearPersonajes();
+        if(!(RepositorioPrincipal.existe("npc1"))){
+            IOBase.mostrarTexto("ERROR: No se pudo encontrar al npc1");
+        }else{
+            Entidad primerPersonajeViviente = RepositorioPrincipal.traer("npc1");
+            primerPersonajeViviente.activar();
+        }
+            
+    }
+    
+    
+}
 
-    /**
+
+    /*
 1) El trabajo escrito deberá presentarse como un archivo digital armado con un
 procesador de textos como Microsoft Word o LibreOffice Writer; lo más
 recomendable es exportar el archivo al formato PDF, pero también se puede
@@ -56,32 +80,4 @@ breve que explique de qué se encarga, principalmente explicitando el o
 los algoritmos que se encuentren en sus métodos. De cada Sistema se
 deben enumerar las Entidades y Componentes que se encuentren
 involucrados en su tarea.
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        IOBase ventana = new IOBase();
-        EventQueue.invokeLater(ventana);
-        CreadorDeMundos.crearLugares();
-        LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("inicio");
-        Navegacion.iniciar(lugarDeInicio);
-        IOBase.mostrarTexto("Bienvenido al juego de la pasión");
-        IOBase.mostrarTexto("Te lo imaginas?");
-        
-        String jugadorHumano = IOBase.ingresarTexto("Ingresa tu nombre");
-        //Ingrese su nombre
-        IOBase.mostrarTexto("Bienvenido " + jugadorHumano);
-                
-        CreadorDeMundos.crearLugares();
-        LugarBase primero = (LugarBase) RepositorioPrincipal.traer("Recepcion");
-        
-        
-        Entidad EnemigoPrincipal = RepositorioPrincipal.traer("Enemigo1");
-        Entidad EnemigoSegundario = RepositorioPrincipal.traer("Enemigo2");
-        Entidad EnemigoTerceario = RepositorioPrincipal.traer("Enemigo3");
-        
-        
-    }
-    
-}
+ */

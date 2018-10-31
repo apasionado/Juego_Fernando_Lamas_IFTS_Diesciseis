@@ -10,32 +10,25 @@ import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 
 
-public class CreadorDeMundos extends FabricaPrincipal {
+public class CreadorDeLugares extends FabricaPrincipal {
     
     public static void crearLugares(){
         
-        LugarBase Recepcion = new LugarBase("Recepción", "Ingreso del lugar");
+        CreadorDePersonajes nuevoPersonaje = new CreadorDePersonajes();
         
-        Recepcion.activar();
+        LugarBase recepcion = new LugarBase("Recepcion", "Ingreso del lugar");
         
+        recepcion.activar();
         
         /*Importar al repositorio principal*/
-        RepositorioPrincipal.agregar(Recepcion, "Recepcion");
+        RepositorioPrincipal.agregar(recepcion, "Recepcion");
+        CreadorDeLugares.agregarIdLugar(recepcion.getId());
         
-        RepositorioPrincipal.traer("Recepcion");
-
-        LugarBase recepcion = new LugarBase("Recepción", "Ingreso del lugar");
-        
-        
-       
         LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
         
         //Como conecto mi mundo con otros mundos
         recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
-        
-        
-        /*Importar al repositorio principal*/
-        RepositorioPrincipal.agregar(recepcion, "Recepcion");
+        recepcion.agregarHablador(nuevoPersonaje.referencia("Elsa Humerio una viajera desconocida"));
         
     }
     
