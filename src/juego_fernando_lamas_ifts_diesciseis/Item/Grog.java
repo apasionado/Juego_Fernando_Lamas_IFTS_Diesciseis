@@ -28,66 +28,16 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
 
     //TODO SOBRE DEFENSA 
     
-    protected int bonoDefensa;
-    protected int bonoResistencia;
-    
+
     Grog(){
         
     }
     
-    
-    @Override
-    public int bonoDefensa() {
-        return this.bonoDefensa;
-    }
 
-    @Override
-    public int bonoResistencia() {
-        return this.bonoResistencia;
-    }
-
-    @Override
-    public int aumentarBonoDefensa(int cantidad) {
-        this.cantidad = 1;
-        IOBase.mostrarTexto("Tu defensa aumento en " + cantidad);
-        this.bonoDefensa = 0;
-        return this.bonoDefensa;
-    }
-
-    @Override
-    public int disminuirBonoDefensa(int cantidad) {       
-        this.bonoDefensa = 0;
-        return this.bonoDefensa;
-    }
-
-    @Override
-    public int aumentarBonoResistencia(int cantidad) {
-        this.bonoResistencia = this.bonoResistencia + 1;
-        return this.bonoResistencia;
-    }
-
-    @Override
-    public int disminuirBonoResistencia(int cantidad) {
-        this.bonoResistencia = this.bonoResistencia - 1;
-        return this.bonoResistencia;
-    }
-    
-    
     //TODO SOBRE EQUIPABLE
     
    
-    protected ParteDelCuerpo Boca;
-   
 
-    @Override
-    public void lugarDeUso(ParteDelCuerpo parte) {
-        IOBase.mostrarTexto("Se usa en " + parte.ManoDerecha);
-    }
-    
-    @Override
-    public ParteDelCuerpo seUsaEn() {
-        return this.Boca;
-    }
 
     //TODO de inventariable
     
@@ -118,13 +68,14 @@ public class Grog extends Componente implements DeDefensa, Inventariable, Equipa
 
     //TODO sobre opciones
     
-    Opciones listaDeOpciones = new Opciones();
+    
     
   
     //mostrar al profesor como hice estas opciones
     @Override
     public Opciones opciones() {
         
+        Opciones listaDeOpciones = new Opciones();
         
         
         listaDeOpciones.agregar("1", "Beber");

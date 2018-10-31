@@ -3,8 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Naara/Documents/NetBeansProjects/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Sistemas/CreadorDeLugares.java</file>
-            <file>file:/C:/Users/Naara/Documents/NetBeansProjects/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Sistemas/CreadorDePersonajes.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Componente/Experiencia.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Componente/Salud.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Entidad/Aldeano.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Componente/Humano.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Componente/Opciones.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Entidad/EventoCombate.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Item/Grog.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Componente/Actividades.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Componente/Dialogador.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Componente/Carga.java</file>
+            <file>file:/D:/eclipse/wb/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Componente/Defensa.java</file>
         </group>
     </open-files>
 </project-private>

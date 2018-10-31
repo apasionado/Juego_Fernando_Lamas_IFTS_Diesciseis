@@ -6,23 +6,17 @@
 package juego_fernando_lamas_ifts_diesciseis.Componente;
 
 import ifts16.pp.juego.componentes.Componente;
-import ifts16.pp.juego.componentes.personaje.ConInventario;
+import ifts16.pp.juego.componentes.personaje.Jugador;
 
 /**
  *
- * @author Fernando Lamas
+ * @author Heresy
  */
-public class Humano extends Componente implements ConInventario{
-
-
-    //Para inicializar las variables "ACTUAL" ver como hizo el profesor en combatiente
+public class EsJugador extends Componente implements Jugador{
     
-    //INICIALIZAR VARIABLES
- 
+    @Override
+    public boolean esJugador() {
+        return true;
+    }
     
-
- 
-
-    
-
 }
