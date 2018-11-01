@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Componente;
+package juego_fernando_lamas_ifts_diesciseis.Componente.Personaje;
 
 import ifts16.pp.juego.componentes.Componente;
 import ifts16.pp.juego.componentes.personaje.Saludable;

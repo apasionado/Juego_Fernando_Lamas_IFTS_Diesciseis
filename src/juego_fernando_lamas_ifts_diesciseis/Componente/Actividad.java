@@ -5,18 +5,10 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Componente;
 
-import ifts16.pp.juego.componentes.Componente;
-import ifts16.pp.juego.componentes.personaje.Jugador;
-
 /**
  *
- * @author Heresy
+ * @author Fernando Lamas
  */
-public class EsJugador extends Componente implements Jugador{
-    
-    @Override
-    public boolean esJugador() {
-        return true;
-    }
+public class Actividad {
     
 }

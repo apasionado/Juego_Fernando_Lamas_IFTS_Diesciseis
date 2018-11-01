@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Componente;
+package juego_fernando_lamas_ifts_diesciseis.Componente.Item;
 
 import ifts16.pp.juego.componentes.Componente;
 import ifts16.pp.juego.componentes.ParteDelCuerpo;
@@ -37,31 +37,33 @@ public class Defensa extends Componente implements DeDefensa {
 
     @Override
     public int aumentarBonoDefensa(int cantidad) {
-        cantidad = 1;
-        IOBase.mostrarTexto("Tu defensa aumento en " + cantidad);
-        this.bonoDefensa = 0;
+        this.bonoDefensa = this.bonoDefensa - cantidad;
+        IOBase.mostrarTexto("Tu defensa aumento en " + cantidad + " y ahora es " + this.bonoDefensa);
         return this.bonoDefensa;
     }
 
     @Override
-    public int disminuirBonoDefensa(int cantidad) {       
-        jjjooj
+    public int disminuirBonoDefensa(int cantidad) {   
+        this.bonoDefensa = this.bonoDefensa - cantidad;
+        IOBase.mostrarTexto("Tu defensa disminuyo en " + cantidad + " y ahora es " + this.bonoDefensa);
         return this.bonoDefensa;
     }
 
     @Override
     public int aumentarBonoResistencia(int cantidad) {
-        this.bonoResistencia = this.bonoResistencia + 1;
+        this.bonoResistencia = this.bonoResistencia + cantidad;
+        IOBase.mostrarTexto("Tu resistencia aumento en " + cantidad + " y ahora es " + this.bonoResistencia);
         return this.bonoResistencia;
     }
 
     @Override
     public int disminuirBonoResistencia(int cantidad) {
-        this.bonoResistencia = this.bonoResistencia - 1;
+        this.bonoResistencia = this.bonoResistencia - cantidad;
+        IOBase.mostrarTexto("Tu resistencia disminuyo en " + cantidad + " y ahora es " + this.bonoResistencia);
         return this.bonoResistencia;
     }
 
-    ;
+    
    
 
     @Override

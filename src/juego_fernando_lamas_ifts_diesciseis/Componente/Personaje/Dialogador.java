@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Componente;
+package juego_fernando_lamas_ifts_diesciseis.Componente.Personaje;
 
 import ifts16.pp.juego.componentes.Componente;
 import ifts16.pp.juego.componentes.personaje.Hablador;
@@ -23,10 +23,9 @@ public class Dialogador extends Componente implements Hablador {
     
     
     //cambiar todos los returns por void y un iobase
-    ss
-    public String presentarse(){
+    public void presentarse(){
         this.texto = "¡Hola! Soy " + personajeActual.getNombre();
-        return this.texto;
+        IOBase.mostrarTexto(this.texto);
     }
     
     public void pegarle(){
@@ -38,12 +37,12 @@ public class Dialogador extends Componente implements Hablador {
         return true;
     }
     
-    public String despedirse(){
-        if(this.terminarConversacion() == true){
-            this.texto = "¡Nos vimos compa!";
-            return this.texto;
+    public void despedirse(){
+        if(!(this.terminarConversacion() == true)){
+            return;
         }else{
-            return null;
+            this.texto = "¡Nos vimos compa!";
+            IOBase.mostrarTexto(this.texto);
         }
     }
 }

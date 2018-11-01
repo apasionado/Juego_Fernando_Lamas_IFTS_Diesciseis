@@ -19,18 +19,21 @@ import java.util.UUID;
  *
  * @author Fernando Lamas
  */
-public class Recepcion extends Componente implements Conectado, Sociable, ConItems {
+public class Recepcion extends Componente implements ConItems, Conectado {
+
+    //Todo sobre con items
+    @Override
+    public Referencias<ReferenciaItem> items() {
+    }
     
-    //TODO SOBRE CONECTADO
+    //Todo sobre conexiones
 
     @Override
     public boolean abrir(UUID lugar) {
-        
     }
 
     @Override
     public boolean cerrar(UUID lugar) {
-        return false;
     }
 
     @Override
@@ -40,16 +43,10 @@ public class Recepcion extends Componente implements Conectado, Sociable, ConIte
     @Override
     public void conectar(ReferenciaLugar lugar) {
     }
+    
 
     @Override
     public Referencias<ReferenciaLugar> conexiones() {
-    }
-
-    
-    //TODO SOBRE CONITEMS
-    
-    @Override
-    public Referencias<ReferenciaItem> items() {
     }
     
 }

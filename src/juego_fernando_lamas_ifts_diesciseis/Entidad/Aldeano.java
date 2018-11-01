@@ -6,7 +6,7 @@
 package juego_fernando_lamas_ifts_diesciseis.Entidad;
 
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
-import juego_fernando_lamas_ifts_diesciseis.Componente.Dialogador;
+import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Dialogador;
 
 /**
  *

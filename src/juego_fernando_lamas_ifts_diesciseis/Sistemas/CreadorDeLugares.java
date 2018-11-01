@@ -7,6 +7,7 @@ package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
 import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.sistemas.FabricaPrincipal;
+import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 
 
@@ -14,11 +15,10 @@ public class CreadorDeLugares extends FabricaPrincipal {
     
     public static void crearLugares(){
         
-        CreadorDePersonajes nuevoPersonaje = new CreadorDePersonajes();
+        IOBase.mostrarTexto("Creando los mundos...");
         
         LugarBase recepcion = new LugarBase("Recepcion", "Ingreso del lugar");
         
-        recepcion.activar();
         
         /*Importar al repositorio principal*/
         RepositorioPrincipal.agregar(recepcion, "Recepcion");
@@ -28,7 +28,8 @@ public class CreadorDeLugares extends FabricaPrincipal {
         
         //Como conecto mi mundo con otros mundos
         recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
-        recepcion.agregarHablador(RepositorioPrincipal.traer("Elsa_Humerio"));
+        
+        
         
         recepcion.setDescripcion("Una sala de estar");
         

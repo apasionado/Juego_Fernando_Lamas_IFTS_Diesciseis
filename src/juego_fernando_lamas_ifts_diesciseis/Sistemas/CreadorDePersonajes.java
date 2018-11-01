@@ -7,13 +7,11 @@
 
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
-import ifts16.pp.juego.componentes.Referencia;
-import ifts16.pp.juego.componentes.ReferenciaPersonaje;
-import ifts16.pp.juego.entidades.Entidad;
-import ifts16.pp.juego.entidades.PersonajeAbstracto;
+import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import ifts16.pp.juego.sistemas.Sistema;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Aldeano;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
 
 /**
  *
@@ -26,23 +24,23 @@ public class CreadorDePersonajes extends Sistema {
         
         
         
-        Aldeano Elsa_Humerio = new Aldeano() {
+        Aldeano Elsa_Humerio = new Aldeano();
             
-            Entidad npc1 = new Entidad();
-           
-            
-        };
-        
-        
-        
         Elsa_Humerio.setNombre("Elsa humerio");
 
-        RepositorioPrincipal.agregar(Elsa_Humerio , "Elsa Humerio");
-        
+        RepositorioPrincipal.agregar(Elsa_Humerio, "Elsa Humerio");
         
     }
     
     public static void crearPersonajeJugador(){
+        
+        
+        EntidadHumana personajeHumano = new EntidadHumana();
+        
+        personajeHumano.setNombre(IOBase.ingresarTexto("Escribe el nombre de tu personaje "));
+        
+        RepositorioPrincipal.agregar(personajeHumano);
+        
         
         //nombreDelJugador = nombre del jugador humano
         

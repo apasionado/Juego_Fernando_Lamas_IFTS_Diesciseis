@@ -10,8 +10,8 @@ import ifts16.pp.juego.utiles.ConOpciones;
 import ifts16.pp.juego.utiles.MapaDeOpciones;
 import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
-import juego_fernando_lamas_ifts_diesciseis.Componente.Carga;
-import juego_fernando_lamas_ifts_diesciseis.Componente.Defensa;
+import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Carga;
+import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Defensa;
 
 /**
  *

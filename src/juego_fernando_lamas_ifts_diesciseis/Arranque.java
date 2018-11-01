@@ -5,14 +5,11 @@
  */
 package juego_fernando_lamas_ifts_diesciseis;
 
-import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
-import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Aldeano;
-import juego_fernando_lamas_ifts_diesciseis.Item.Grog;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeLugares;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDePersonajes;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
@@ -28,20 +25,20 @@ public class Arranque {
         
         IOBase ventana = new IOBase();
         EventQueue.invokeLater(ventana);
+        IOBase.mostrarTexto("El juego");
+        
+        CreadorDePersonajes.crearPersonajeJugador();
+        
+        EntidadHumana personajeHumano = new EntidadHumana();
+        
+        IOBase.ingresarTexto("Bienvenido " + personajeHumano.getNombre() + ". "
+                + "Ingrese cualquier caracter para continuar");
+        
         CreadorDeLugares.crearLugares();
+        
         LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("Recepcion");
         Navegacion.iniciar(lugarDeInicio);
-        CreadorDePersonajes.crearPersonajes();
-        if(!(RepositorioPrincipal.existe("Elsa Humerio"))){
-            IOBase.mostrarTexto("ERROR: No se pudo encontrar a Elsa Humerio");
-        }else{
-            Entidad primerPersonajeViviente = RepositorioPrincipal.traer("Elsa Humerio");
-            primerPersonajeViviente.activar();
-        }
         
-        
-        Grog grog = new Grog();
-        IOBase.elegirOpcion(grog.opciones());
         
         
     }
