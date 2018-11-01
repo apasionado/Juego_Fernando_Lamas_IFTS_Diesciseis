@@ -28,7 +28,9 @@ public class CreadorDeLugares extends FabricaPrincipal {
         
         //Como conecto mi mundo con otros mundos
         recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
-        recepcion.agregarHablador(nuevoPersonaje.referencia("Elsa Humerio una viajera desconocida"));
+        recepcion.agregarHablador(RepositorioPrincipal.traer("Elsa_Humerio"));
+        
+        recepcion.setDescripcion("Una sala de estar");
         
     }
     

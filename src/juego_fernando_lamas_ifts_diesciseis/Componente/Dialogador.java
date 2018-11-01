@@ -8,6 +8,7 @@ package juego_fernando_lamas_ifts_diesciseis.Componente;
 import ifts16.pp.juego.componentes.Componente;
 import ifts16.pp.juego.componentes.personaje.Hablador;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
+import ifts16.pp.juego.sistemas.IOBase;
 
 /**
  *
@@ -20,14 +21,17 @@ public class Dialogador extends Componente implements Hablador {
     
     PersonajeAbstracto personajeActual = new PersonajeAbstracto() {};
     
+    
+    //cambiar todos los returns por void y un iobase
+    ss
     public String presentarse(){
         this.texto = "¡Hola! Soy " + personajeActual.getNombre();
         return this.texto;
     }
     
-    public String pegarle(){
+    public void pegarle(){
         this.texto = "¡Auch!";
-        return this.texto;
+        IOBase.mostrarTexto(this.texto);
     }
     
     public boolean terminarConversacion(){
@@ -36,7 +40,7 @@ public class Dialogador extends Componente implements Hablador {
     
     public String despedirse(){
         if(this.terminarConversacion() == true){
-            this.texto = "¡Nos vimos guachin!";
+            this.texto = "¡Nos vimos compa!";
             return this.texto;
         }else{
             return null;

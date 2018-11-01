@@ -5,14 +5,12 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
-import ifts16.pp.juego.sistemas.FabricaPrincipal;
+import ifts16.pp.juego.sistemas.Sistema;
 
 /**
  *
  * @author alumno
  */
-public class CreadorDeMateriales extends FabricaPrincipal{
-    
-    
+public class Inventario extends Sistema{
     
 }

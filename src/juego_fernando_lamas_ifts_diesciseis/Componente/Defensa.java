@@ -19,6 +19,11 @@ public class Defensa extends Componente implements DeDefensa {
     protected int bonoDefensa;
     protected int bonoResistencia;
     
+    public Defensa(){
+        this.bonoDefensa = 0;
+        this.bonoResistencia = 0;
+    }
+    
     
     @Override
     public int bonoDefensa() {
@@ -40,7 +45,7 @@ public class Defensa extends Componente implements DeDefensa {
 
     @Override
     public int disminuirBonoDefensa(int cantidad) {       
-        this.bonoDefensa = 0;
+        jjjooj
         return this.bonoDefensa;
     }
 

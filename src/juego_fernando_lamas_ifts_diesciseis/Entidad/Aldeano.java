@@ -6,8 +6,6 @@
 package juego_fernando_lamas_ifts_diesciseis.Entidad;
 
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
-import ifts16.pp.juego.sistemas.IOBase;
-import java.awt.Color;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Dialogador;
 
 /**
@@ -17,13 +15,20 @@ import juego_fernando_lamas_ifts_diesciseis.Componente.Dialogador;
 public class Aldeano extends PersonajeAbstracto{
     
     public Dialogador Hablador;
+    int cantidad = 0;
     
-    Aldeano(){
+    public Aldeano(){
     super();  
     this.nombre = "Elsa Humerio" + this.getId().toString();
     this.Hablador = new Dialogador();
-    IOBase.mostrarTexto(Hablador.presentarse(), Color.CYAN, Color.white);
+    
     }
     
+    public void prueba(){
+            if(cantidad == 1){
+                this.Hablador.pegarle();
+            }
+    }
+
     
 }

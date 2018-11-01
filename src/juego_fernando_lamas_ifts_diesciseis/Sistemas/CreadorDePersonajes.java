@@ -11,41 +11,33 @@ import ifts16.pp.juego.componentes.Referencia;
 import ifts16.pp.juego.componentes.ReferenciaPersonaje;
 import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
-import static ifts16.pp.juego.entidades.Tipo.Personaje;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
+import ifts16.pp.juego.sistemas.Sistema;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Aldeano;
 
 /**
  *
  * @author alumno
  */
-public class CreadorDePersonajes extends PersonajeAbstracto {
+public class CreadorDePersonajes extends Sistema {
     
     
     public static void crearPersonajes(){
         
         
         
-        Entidad npc1 = new Entidad() {
+        Aldeano Elsa_Humerio = new Aldeano() {
             
+            Entidad npc1 = new Entidad();
+           
             
-            ReferenciaPersonaje npc1RefPer = new ReferenciaPersonaje(this.getId(),this.getNombre());
-            
-            
-            @Override
-            public Referencia referencia(String texto) {
-                texto = "Elsa Humerio es la referencia";
-                return npc1RefPer;
-            }
-
-            @Override
-            public Referencia referencia() {
-                return npc1RefPer;
-            } 
         };
-    
-        npc1.setNombre("Elsa humerio");
+        
+        
+        
+        Elsa_Humerio.setNombre("Elsa humerio");
 
-        RepositorioPrincipal.agregar(npc1 , "npc1");
+        RepositorioPrincipal.agregar(Elsa_Humerio , "Elsa Humerio");
         
         
     }
