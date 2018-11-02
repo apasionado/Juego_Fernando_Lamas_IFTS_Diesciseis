@@ -5,6 +5,7 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Entidad;
 
+import ifts16.pp.juego.componentes.ReferenciaPersonaje;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Dialogador;
 
@@ -12,23 +13,21 @@ import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Dialogador;
  *
  * @author Heresy
  */
-public class Aldeano extends PersonajeAbstracto{
+public class Viviente extends PersonajeAbstracto{
     
     public Dialogador Hablador;
     int cantidad = 0;
     
-    public Aldeano(){
+    public Viviente(){
     super();  
     this.nombre = "Elsa Humerio" + this.getId().toString();
     this.Hablador = new Dialogador();
-    
-    }
+            }
     
     public void prueba(){
             if(cantidad == 1){
                 this.Hablador.pegarle();
             }
     }
-
     
 }

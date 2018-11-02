@@ -5,10 +5,14 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
+import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
+import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
+import juego_fernando_lamas_ifts_diesciseis.Item.Grog;
 
 
 public class CreadorDeLugares extends FabricaPrincipal {
@@ -19,24 +23,33 @@ public class CreadorDeLugares extends FabricaPrincipal {
         
         LugarBase recepcion = new LugarBase("Recepcion", "Ingreso del lugar");
         
+        CreadorDeLugares.agregarIdLugar(recepcion.getId());
+        recepcion.setDescripcion("Una sala de estar");
         
         /*Importar al repositorio principal*/
         RepositorioPrincipal.agregar(recepcion, "Recepcion");
-        CreadorDeLugares.agregarIdLugar(recepcion.getId());
+
         
         LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
+        
+        //Instancio las entidades y los items para crearlas? SIRVE?
+        Viviente elsa = new Viviente();
+        Grog grog = new Grog();
+        
         
         //Como conecto mi mundo con otros mundos
         recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
         
+        //Como conecto mi mundo con items
+        recepcion.agregarItem(grog.referencia("Grog"));
         
+        //Como conecto mi mundo con otros personajes        
+        //la referencia del personaje no la pude hacer andar
+        recepcion.agregarHablador(elsa.referencia());
         
-        recepcion.setDescripcion("Una sala de estar");
+        habitacionPrincipal.agregarVecino(recepcion.referencia("Volver a la recepcion"));
         
     }
-    
-    
-    
-    
-    
+
+
 }

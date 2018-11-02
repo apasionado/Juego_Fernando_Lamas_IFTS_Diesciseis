@@ -10,6 +10,7 @@ import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeLugares;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDePersonajes;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
@@ -27,13 +28,14 @@ public class Arranque {
         EventQueue.invokeLater(ventana);
         IOBase.mostrarTexto("El juego");
         
-        EntidadHumana personaje = new EntidadHumana();
-        
-        CreadorDePersonajes.crearPersonajeJugador(personaje);
-        
-        IOBase.ingresarTexto("Bienvenido " + personaje.getNombre() + ". "
+        EntidadHumana personajeHumano = new EntidadHumana();
+        CreadorDePersonajes.crearPersonajeJugador(personajeHumano);
+        IOBase.ingresarTexto("Bienvenido " + personajeHumano.getNombre() + ". "
                 + "Ingrese cualquier caracter para continuar");
         
+        
+        Viviente personajeViviente = new Viviente();
+        CreadorDePersonajes.crearPersonajes(personajeViviente);
         CreadorDeLugares.crearLugares();
         
         LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("Recepcion");

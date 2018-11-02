@@ -5,14 +5,12 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Item;
 
-import ifts16.pp.juego.componentes.personaje.Cargado;
 import ifts16.pp.juego.entidades.ItemAbstracto;
 import ifts16.pp.juego.utiles.ConOpciones;
 import ifts16.pp.juego.utiles.MapaDeOpciones;
 import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Carga;
-import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Defensa;
 
 /**
  *
@@ -20,18 +18,14 @@ import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Defensa;
  */
 public class Grog extends ItemAbstracto implements ConOpciones {
         
-    public Defensa DeDefensa;
     public Carga Cargado;
     
     public Grog(){
     super();
     this.nombre = "Grog" + this.getId().toString();
-    this.DeDefensa = new Defensa();
     this.Cargado = new Carga();
-    
-    this.DeDefensa.aumentarBonoDefensa(5);
     }
-      
+    
     //mostrar al profesor como hice estas opciones
      MapaDeOpciones mapa = new MapaDeOpciones();
      Opciones listaDeOpciones = new Opciones();

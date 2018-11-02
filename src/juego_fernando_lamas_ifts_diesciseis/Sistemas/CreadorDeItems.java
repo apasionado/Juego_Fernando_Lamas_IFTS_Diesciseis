@@ -23,18 +23,8 @@ public class CreadorDeItems extends Sistema{
 	
     public static void crearItem(Grog grog) {
         
-        
-            
-        
-      
-      
-    
-      grog.setNombre("Grog");
-    
       RepositorioPrincipal.agregar(grog, "Grog");
-    
-    
-    
+
     }
     public void PruebaOpciones(Grog grog){
           grog.opciones();

@@ -61,6 +61,7 @@ public class Defensa extends Componente implements DeDefensa {
         this.bonoResistencia = this.bonoResistencia - cantidad;
         IOBase.mostrarTexto("Tu resistencia disminuyo en " + cantidad + " y ahora es " + this.bonoResistencia);
         return this.bonoResistencia;
+
     }
 
     

@@ -9,7 +9,7 @@ package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import ifts16.pp.juego.sistemas.Sistema;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Aldeano;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
 
 /**
@@ -19,15 +19,11 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
 public class CreadorDePersonajes extends Sistema {
     
     
-    public static void crearPersonajes(){
+    public static void crearPersonajes(Viviente personaje){
         
-        
-        
-        Aldeano Elsa_Humerio = new Aldeano();
-            
-        Elsa_Humerio.setNombre("Elsa humerio");
+        personaje.activar();
 
-        RepositorioPrincipal.agregar(Elsa_Humerio, "Elsa Humerio");
+        RepositorioPrincipal.agregar(personaje, "Elsa Humerio");
         
     }
     

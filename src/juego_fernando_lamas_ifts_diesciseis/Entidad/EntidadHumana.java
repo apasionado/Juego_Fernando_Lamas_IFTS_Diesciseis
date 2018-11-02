@@ -19,7 +19,7 @@ public class EntidadHumana extends PersonajeAbstracto{
     public EntidadHumana(){
         super();
         this.nombre = IOBase.ingresarTexto("Escribe el nombre de tu personaje ");
-        
+        this.id = this.getId();
     }
     
 }
