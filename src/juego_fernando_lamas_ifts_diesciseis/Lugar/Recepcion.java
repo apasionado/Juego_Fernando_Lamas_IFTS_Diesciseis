@@ -27,7 +27,10 @@ public class Recepcion extends Componente implements ConItems, Conectado {
     }
     
     //Todo sobre conexiones
-
+    
+    
+    
+    
     @Override
     public boolean abrir(UUID lugar) {
     }

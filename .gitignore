@@ -6,3 +6,14 @@ nbproject/private/private.properties
 build/classes/juego_fernando_lamas_ifts_diesciseis/Sistemas/CreadorDePersonajes.class
 build/classes/juego_fernando_lamas_ifts_diesciseis/Entidad/EntidadHumana.class
 build/classes/juego_fernando_lamas_ifts_diesciseis/Arranque.class
+nbproject/project.xml
+nbproject/genfiles.properties
+nbproject/build-impl.xml
+build/classes/juego_fernando_lamas_ifts_diesciseis/Componente/Item/Carga.class
+build/classes/juego_fernando_lamas_ifts_diesciseis/Componente/Item/Defensa.class
+build/classes/juego_fernando_lamas_ifts_diesciseis/Item/Grog.class
+build/classes/juego_fernando_lamas_ifts_diesciseis/Lugar/Recepcion.class
+build.xml
+nbproject/project.xml
+nbproject/build-impl.xml
+nbproject/genfiles.properties

@@ -1,0 +1,20 @@
+
+Conjunto de clases basicas para crear sus propias Entidades dentro del juego. 
+
+Es uno de los tres elementos principales en un framework Entidad-Componente-Sistema.
+
+Una Entidad es una de las clases principales y representativas dentro del juego.
+
+Su principal funcion es contener una serie de Componente en su interior que le permitan interactuar con los Sistema.
+
+El framework identifica tres tipos de Entidades que se pueden tener dentro del mismo: lugares, personajes e items.
+
+Por cada uno de ellos se incluye una clase Abstracta que sirva de base para sus juegos.
+
+LugarAbstracto representa un lugar cualquiera. La funcion principal de un lugar es conectarse con otros lugares e incluir a todos los personajes e items que se encuentran en su interior.
+ 
+Por ello, la forma mas practica de trabajar con ellos es haciendo que sus atributos sean componentes con referencias a otras entidades, y nada mas.
+
+Aplicando esa vision, y como ayuda, se incluye en el paquete la clase LugarBase que servira para trabajar directamente o de Guia para quien quiera crear sus propios tipos de lugares mas especificos y relacionados con su juego.
+
+Es responsabilidad de quien cree el juego con el framework hacer subclases de PersonajeAbstracto e ItemAbstracto para adaptarlo a sus necesidades y trabajar con los mismos.

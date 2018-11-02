@@ -18,7 +18,7 @@ public class Carga extends Componente implements Cargado{
     protected int pesoActual;
     protected int pesoMaximo;
     
-    Carga(){
+    public Carga(){
         this.pesoActual = 0;
         this.pesoMaximo = 10;
     }

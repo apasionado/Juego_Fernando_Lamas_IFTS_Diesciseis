@@ -5,6 +5,7 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Item;
 
+import ifts16.pp.juego.componentes.personaje.Cargado;
 import ifts16.pp.juego.entidades.ItemAbstracto;
 import ifts16.pp.juego.utiles.ConOpciones;
 import ifts16.pp.juego.utiles.MapaDeOpciones;
@@ -26,7 +27,9 @@ public class Grog extends ItemAbstracto implements ConOpciones {
     super();
     this.nombre = "Grog" + this.getId().toString();
     this.DeDefensa = new Defensa();
-
+    this.Cargado = new Carga();
+    
+    this.DeDefensa.aumentarBonoDefensa(5);
     }
       
     //mostrar al profesor como hice estas opciones
@@ -54,7 +57,7 @@ public class Grog extends ItemAbstracto implements ConOpciones {
     
     
     public void Prueba(){
-     MapaDeOpciones mapa = new MapaDeOpciones();
+     MapaDeOpciones mapaConMuchasListas = new MapaDeOpciones();
      Opciones listaDeOpciones = new Opciones();
      Opcion unaSola = new Opcion("5", "Prueba");
      

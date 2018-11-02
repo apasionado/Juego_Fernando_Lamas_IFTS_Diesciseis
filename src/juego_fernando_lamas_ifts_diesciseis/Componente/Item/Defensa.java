@@ -68,8 +68,9 @@ public class Defensa extends Componente implements DeDefensa {
 
     @Override
     public void lugarDeUso(ParteDelCuerpo parte) {
-        IOBase.mostrarTexto("Se usa en ");
+        IOBase.mostrarTexto("Se usa en " + parte.ManoDerecha);
     }
+    
     
     @Override
     public ParteDelCuerpo seUsaEn() {
