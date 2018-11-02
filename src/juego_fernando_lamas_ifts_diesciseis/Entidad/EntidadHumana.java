@@ -6,6 +6,7 @@
 package juego_fernando_lamas_ifts_diesciseis.Entidad;
 
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
+import ifts16.pp.juego.sistemas.IOBase;
 
 /**
  *
@@ -17,8 +18,7 @@ public class EntidadHumana extends PersonajeAbstracto{
     
     public EntidadHumana(){
         super();
-        this.activo = true;
-        this.nombre = this.getNombre() + this.getId();
+        this.nombre = IOBase.ingresarTexto("Escribe el nombre de tu personaje ");
         
     }
     

@@ -27,11 +27,11 @@ public class Arranque {
         EventQueue.invokeLater(ventana);
         IOBase.mostrarTexto("El juego");
         
-        CreadorDePersonajes.crearPersonajeJugador();
+        EntidadHumana personaje = new EntidadHumana();
         
-        EntidadHumana personajeHumano = new EntidadHumana();
+        CreadorDePersonajes.crearPersonajeJugador(personaje);
         
-        IOBase.ingresarTexto("Bienvenido " + personajeHumano.getNombre() + ". "
+        IOBase.ingresarTexto("Bienvenido " + personaje.getNombre() + ". "
                 + "Ingrese cualquier caracter para continuar");
         
         CreadorDeLugares.crearLugares();

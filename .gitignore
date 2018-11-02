@@ -2,3 +2,7 @@
 \nbproject\
 nbproject/private/private.properties
 nbproject/private/private.xml
+nbproject/private/private.properties
+build/classes/juego_fernando_lamas_ifts_diesciseis/Sistemas/CreadorDePersonajes.class
+build/classes/juego_fernando_lamas_ifts_diesciseis/Entidad/EntidadHumana.class
+build/classes/juego_fernando_lamas_ifts_diesciseis/Arranque.class

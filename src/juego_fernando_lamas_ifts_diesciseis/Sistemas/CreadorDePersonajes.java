@@ -7,7 +7,6 @@
 
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
-import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import ifts16.pp.juego.sistemas.Sistema;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Aldeano;
@@ -32,14 +31,11 @@ public class CreadorDePersonajes extends Sistema {
         
     }
     
-    public static void crearPersonajeJugador(){
+    public static void crearPersonajeJugador(EntidadHumana personaje){
+         
+        personaje.activar();
         
-        
-        EntidadHumana personajeHumano = new EntidadHumana();
-        
-        personajeHumano.setNombre(IOBase.ingresarTexto("Escribe el nombre de tu personaje "));
-        
-        RepositorioPrincipal.agregar(personajeHumano);
+        RepositorioPrincipal.agregar(personaje, "Humano");
         
         
         //nombreDelJugador = nombre del jugador humano
