@@ -19,11 +19,13 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
 public class CreadorDePersonajes extends Sistema {
     
     
-    public static void crearPersonajes(Viviente personaje){
+    public static void crearPersonajes(){
         
-        personaje.activar();
+        Viviente elsa = new Viviente();
+        
+        elsa.activar();
 
-        RepositorioPrincipal.agregar(personaje, "Elsa Humerio");
+        RepositorioPrincipal.agregar(elsa, "Elsa Humerio");
         
     }
     

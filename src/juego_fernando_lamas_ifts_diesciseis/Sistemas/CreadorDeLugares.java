@@ -10,6 +10,7 @@ import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.IOBase;
+import ifts16.pp.juego.sistemas.NavegacionBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
 import juego_fernando_lamas_ifts_diesciseis.Item.Grog;
@@ -33,7 +34,13 @@ public class CreadorDeLugares extends FabricaPrincipal {
         LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
         
         //Instancio las entidades y los items para crearlas? SIRVE?
-        Viviente elsa = new Viviente();
+        PersonajeAbstracto elsa = (PersonajeAbstracto) RepositorioPrincipal.traer("Elsa Humerio");
+        
+                //Como conecto mi mundo con otros personajes        
+        //la referencia del personaje no la pude hacer andar
+        recepcion.agregarHablador(elsa.referencia());
+        
+        
         Grog grog = new Grog();
         
         
@@ -43,9 +50,7 @@ public class CreadorDeLugares extends FabricaPrincipal {
         //Como conecto mi mundo con items
         recepcion.agregarItem(grog.referencia("Grog"));
         
-        //Como conecto mi mundo con otros personajes        
-        //la referencia del personaje no la pude hacer andar
-        recepcion.agregarHablador(elsa.referencia());
+
         
         habitacionPrincipal.agregarVecino(recepcion.referencia("Volver a la recepcion"));
         
