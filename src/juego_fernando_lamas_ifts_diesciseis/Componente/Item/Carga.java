@@ -20,7 +20,7 @@ public class Carga extends Componente implements Cargado{
     
     public Carga(){
         this.pesoActual = 0;
-        this.pesoMaximo = 10;
+        
     }
     
     
@@ -33,7 +33,11 @@ public class Carga extends Componente implements Cargado{
     }
 
     @Override
-    public int pesoMaximo() {
+    public int pesoMaximo(){
+        return this.pesoMaximo;
+    }
+    
+    public int pesoMaximo(int peso) {
         return this.pesoMaximo;
     }
 

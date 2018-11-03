@@ -24,6 +24,7 @@ public class Grog extends ItemAbstracto implements ConOpciones {
     super();
     this.nombre = "Grog" + this.getId().toString();
     this.Cargado = new Carga();
+    this.Cargado.agregarPeso(3);
     }
     
     //mostrar al profesor como hice estas opciones
@@ -31,6 +32,7 @@ public class Grog extends ItemAbstracto implements ConOpciones {
      Opciones listaDeOpciones = new Opciones();
      Opcion unaSola = new Opcion("5", "Prueba");
      
+    @Override
     public Opciones opciones() {
         
         

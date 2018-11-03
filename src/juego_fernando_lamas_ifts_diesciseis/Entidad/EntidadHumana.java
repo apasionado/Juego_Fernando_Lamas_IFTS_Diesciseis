@@ -7,6 +7,7 @@ package juego_fernando_lamas_ifts_diesciseis.Entidad;
 
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.IOBase;
+import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Carga;
 
 /**
  *
@@ -14,12 +15,13 @@ import ifts16.pp.juego.sistemas.IOBase;
  */
 public class EntidadHumana extends PersonajeAbstracto{
     
-    
+    public Carga Cargado;
     
     public EntidadHumana(){
         super();
-        this.nombre = IOBase.ingresarTexto("Escribe el nombre de tu personaje ");
-        this.id = this.getId();
+        this.nombre = IOBase.ingresarTexto("Escribe el nombre de tu personaje ") + this.getId().toString();
+        this.Cargado = new Carga();
+        this.Cargado.pesoMaximo(10);
     }
     
 }

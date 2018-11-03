@@ -21,7 +21,7 @@ public class CreadorDeItems extends Sistema{
     
     Grog grog = new Grog();
 	
-    public static void crearItem(Grog grog) {
+    public static void crearItem(Grog grog, BigoteFalso bigote) {
         
       RepositorioPrincipal.agregar(grog, "Grog");
 

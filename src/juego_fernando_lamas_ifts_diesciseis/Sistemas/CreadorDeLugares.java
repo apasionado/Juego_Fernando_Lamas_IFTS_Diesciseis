@@ -20,11 +20,16 @@ public class CreadorDeLugares extends FabricaPrincipal {
         IOBase.mostrarTexto("Creando los mundos...");
         
         LugarBase recepcion = new LugarBase("Recepcion", "Ingreso del lugar");
-        
         CreadorDeLugares.agregarIdLugar(recepcion.getId());
         recepcion.setDescripcion("Una sala de estar");
 
+        
+        
         LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
+        CreadorDeLugares.agregarIdLugar(habitacionPrincipal.getId());
+        habitacionPrincipal.setDescripcion("Una descripcion innecesaria");
+        
+        
         
         //Instancio las entidades y los items para crearlas? SIRVE?
         Viviente elsa = (Viviente) RepositorioPrincipal.traer("Elsa Humerio");
@@ -36,7 +41,6 @@ public class CreadorDeLugares extends FabricaPrincipal {
 
         //Como conecto mi mundo con otros mundos
         recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
-
         habitacionPrincipal.agregarVecino(recepcion.referencia("Volver a la recepcion"));
         
         /*Importar al repositorio principal*/
