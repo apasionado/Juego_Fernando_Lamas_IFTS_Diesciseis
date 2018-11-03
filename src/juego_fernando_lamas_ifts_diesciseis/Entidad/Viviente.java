@@ -5,8 +5,8 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Entidad;
 
-import ifts16.pp.juego.componentes.ReferenciaPersonaje;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
+import ifts16.pp.juego.sistemas.IOBase;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Dialogador;
 
 /**
@@ -22,12 +22,8 @@ public class Viviente extends PersonajeAbstracto{
     super();  
     this.nombre = "Elsa Humerio" + this.getId().toString();
     this.Hablador = new Dialogador();
-            }
-    
-    public void prueba(){
-            if(cantidad == 1){
-                this.Hablador.pegarle();
-            }
     }
     
 }
+    
+    

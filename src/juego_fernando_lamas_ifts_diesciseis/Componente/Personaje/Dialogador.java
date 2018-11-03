@@ -26,6 +26,7 @@ public class Dialogador extends Componente implements Hablador {
     public void presentarse(){
         this.texto = "¡Hola! Soy " + personajeActual.getNombre();
         IOBase.mostrarTexto(this.texto);
+        IOBase.ingresarTexto("Tu como estas?");
     }
     
     public void pegarle(){
@@ -44,5 +45,6 @@ public class Dialogador extends Componente implements Hablador {
             this.texto = "¡Nos vimos compa!";
             IOBase.mostrarTexto(this.texto);
         }
+       
     }
 }

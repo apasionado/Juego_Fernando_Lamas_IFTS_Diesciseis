@@ -5,7 +5,6 @@
  */
 package juego_fernando_lamas_ifts_diesciseis;
 
-import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.IOBase;
@@ -36,7 +35,6 @@ public class Arranque {
                 + "Ingrese cualquier caracter para continuar");
         
         
-        PersonajeAbstracto personajeViviente = (PersonajeAbstracto) RepositorioPrincipal.traer("Elsa Humerio");
         CreadorDePersonajes.crearPersonajes();
         CreadorDeLugares.crearLugares();
         
