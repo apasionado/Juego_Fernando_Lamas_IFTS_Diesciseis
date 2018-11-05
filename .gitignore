@@ -36,3 +36,5 @@ build/classes/juego_fernando_lamas_ifts_diesciseis/Arranque.class
 *.xml
 *.properties
 *.xml
+*.xml
+*.class
