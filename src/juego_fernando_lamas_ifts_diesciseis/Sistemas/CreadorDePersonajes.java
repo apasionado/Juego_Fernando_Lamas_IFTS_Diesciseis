@@ -24,9 +24,7 @@ public class CreadorDePersonajes extends Sistema {
         
         Viviente elsa = new Viviente();
         
-        elsa.activar();
-        
-        RepositorioPrincipal.agregar(elsa, "Elsa Humerio");
+        RepositorioPrincipal.agregar(elsa,"Elsa Humerio");
         
     }
     
