@@ -5,7 +5,10 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
+import ifts16.pp.juego.componentes.Referencia;
+import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
+import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
@@ -26,22 +29,16 @@ public class CreadorDeLugares extends FabricaPrincipal {
         LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
         
         //Instancio las entidades y los items para crearlas? SIRVE?
-        if(!(RepositorioPrincipal.existe("Elsa Humerio"))){
-            IOBase.mostrarTexto("No se pudo encontrar a elsa humerio");
-        }else{
-            Viviente elsa = (Viviente) RepositorioPrincipal.traer("Elsa Humerio");
+        /*
+        chequear por que no me anda el repositorio en conjunto de la navegacion
+        */
+        Viviente elsa = (Viviente) RepositorioPrincipal.traer("Elsa Humerio");
+
             
         //Como conecto mi mundo con otros personajes        
         //la referencia del personaje no la pude hacer andar
-        recepcion.agregarHablador(elsa.referencia("Un viviente comun"));
+        recepcion.agregarHablador(elsa.referencia("Un aldeano"));
         
-        }
-        
-        
-        
-        
-
-
         //Como conecto mi mundo con otros mundos
         recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
 

@@ -6,6 +6,7 @@
 package juego_fernando_lamas_ifts_diesciseis.Item;
 
 import ifts16.pp.juego.entidades.ItemAbstracto;
+import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.utiles.ConOpciones;
 import ifts16.pp.juego.utiles.MapaDeOpciones;
 import ifts16.pp.juego.utiles.Opcion;
@@ -29,7 +30,7 @@ public class Grog extends ItemAbstracto implements ConOpciones {
     //mostrar al profesor como hice estas opciones
      MapaDeOpciones mapa = new MapaDeOpciones();
      Opciones listaDeOpciones = new Opciones();
-     Opcion unaSola = new Opcion("5", "Prueba");
+     Opcion eleccion = IOBase.elegirOpcion(listaDeOpciones);
      
     public Opciones opciones() {
         
@@ -49,15 +50,6 @@ public class Grog extends ItemAbstracto implements ConOpciones {
         
     }
     
-    
-    public void Prueba(){
-     MapaDeOpciones mapaConMuchasListas = new MapaDeOpciones();
-     Opciones listaDeOpciones = new Opciones();
-     Opcion unaSola = new Opcion("5", "Prueba");
-     
-     
-    }    
-
 
     @Override
     public Opciones opciones(String texto) {

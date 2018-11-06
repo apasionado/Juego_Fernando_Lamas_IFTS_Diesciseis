@@ -10,8 +10,8 @@ package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import ifts16.pp.juego.sistemas.Sistema;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
 
 /**
  *
