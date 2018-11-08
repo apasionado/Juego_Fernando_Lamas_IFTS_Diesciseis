@@ -10,12 +10,9 @@ import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeCombates;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeLugares;
-import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDePersonajes;
-import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
 /**
  *
  * @author Fernando Lamas
@@ -24,7 +21,7 @@ public class Arranque {
      /*
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         
         IOBase ventana = new IOBase();
         EventQueue.invokeLater(ventana);
@@ -36,7 +33,7 @@ public class Arranque {
         
         
         LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("Recepcion");
-        CreadorDePersonajes.crearPersonajes();
+        //CreadorDePersonajes.crearPersonajes();
         CreadorDeLugares.crearLugares();
         
         

@@ -27,6 +27,7 @@ public class EntidadHumana extends PersonajeAbstracto{
         this.ConInventario = new Inventario();
         this.Saludable = new Salud();
         this.Luchador = new Lucha();
+        this.Saludable.establecerSalud(10);
     }
     
 }

@@ -8,7 +8,6 @@ package juego_fernando_lamas_ifts_diesciseis.Componente.Personaje;
 import ifts16.pp.juego.componentes.Componente;
 import ifts16.pp.juego.componentes.personaje.Saludable;
 import ifts16.pp.juego.sistemas.IOBase;
-import java.awt.Color;
 import java.util.Random;
 
 /**
@@ -27,16 +26,22 @@ public class Salud extends Componente implements Saludable{
     
       public Salud() {
         this.saludMaxima = 10;
-        this.saludActual = 10;
     }
     
     
    
 
     
-    @Override
-    public int saludActual() {
-        return saludActual;
+    public int establecerSalud(int cantidad) {
+        if(!(cantidad > this.saludMaxima)){
+            this.saludActual = cantidad;
+        }else{
+            IOBase.ingresarTexto("ATENCION: La salud establecida no puede ser mayor que " + this.saludMaxima + " "
+                    + "se ha establecido por salud máxima el limite maximo (" + this.saludMaxima + ")");
+            this.saludActual = this.saludMaxima;
+        }
+  
+        return this.saludActual;
     }
 
     @Override
@@ -52,8 +57,8 @@ public class Salud extends Componente implements Saludable{
 
     @Override
     public int daniarMaximo() {
-        this.daniar = this.saludActual;
-        return this.daniar;
+        this.saludActual = this.saludActual - this.saludActual;
+        return this.saludActual;
     }
 
     @Override
@@ -72,8 +77,11 @@ public class Salud extends Componente implements Saludable{
     @Override
     public int daniar(int puntos) {
         this.saludActual = this.saludActual - puntos;
-        IOBase.mostrarTexto("Haz daniado por "+puntos+ " a tu oponente");
-        IOBase.mostrarTexto("Le quedan " + this.saludActual + " puntos de vida");
+        return this.saludActual;
+    }
+
+    @Override
+    public int saludActual() {
         return this.saludActual;
     }
   

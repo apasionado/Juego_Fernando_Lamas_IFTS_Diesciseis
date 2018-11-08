@@ -5,10 +5,7 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
-import ifts16.pp.juego.componentes.Referencia;
-import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
-import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
@@ -32,7 +29,7 @@ public class CreadorDeLugares extends FabricaPrincipal {
         /*
         chequear por que no me anda el repositorio en conjunto de la navegacion
         */
-        Viviente elsa = (Viviente) RepositorioPrincipal.traer("Elsa Humerio");
+        Viviente elsa = new Viviente();
 
             
         //Como conecto mi mundo con otros personajes        

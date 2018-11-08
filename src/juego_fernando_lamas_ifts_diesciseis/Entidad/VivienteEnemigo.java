@@ -24,10 +24,11 @@ public class VivienteEnemigo extends PersonajeAbstracto{
     public VivienteEnemigo(){
     super();  
     this.id = this.getId();
-    this.nombre = "Elsa Humerio" + this.getId().toString();
+    this.nombre = ("Jairo Ymicagada");
     
     this.Saludable = new Salud();
     this.Luchador = new Lucha();
+    this.Saludable.establecerSalud(10);
     }
     
 }
