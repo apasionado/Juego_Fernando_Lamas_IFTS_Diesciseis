@@ -5,14 +5,16 @@
  */
 package juego_fernando_lamas_ifts_diesciseis;
 
+import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
-import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeCombates;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeLugares;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDePersonajes;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
 /**
  *
  * @author Fernando Lamas
@@ -25,26 +27,34 @@ public class Arranque {
         
         IOBase ventana = new IOBase();
         EventQueue.invokeLater(ventana);
-        /*IOBase.mostrarTexto("Bienvenido al juego extraño");
+        /*
         EntidadHumana personajeHumano = new EntidadHumana();
         CreadorDePersonajes.crearPersonajeJugador(personajeHumano);
         IOBase.ingresarTexto("Bienvenido " + personajeHumano.getNombre() + ". "
-                + "Ingrese cualquier caracter para continuar");*/
+                + "Ingrese cualquier caracter para continuar");
+        */
+        
+        
+        CreadorDeLugares.crearLugaresyPersonajes();
+        
         
         
         LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("Recepcion");
-        //CreadorDePersonajes.crearPersonajes();
-        CreadorDeLugares.crearLugares();
         
+        
+        
+        //PARECIERA QUE NAVEGANCION.INICIAR ESTÁ TOMANDO LUCHAR DEL FRAMEWORK Y NO DEL MIO
+        
+        
+        Navegacion.luchar(lugarDeInicio);
         
         /*
         Navegacion.hablar(lugarDeInicio);
         
         */
         
-        EntidadHumana personajeHumano = new EntidadHumana();
-        VivienteEnemigo e = new VivienteEnemigo();
-        CreadorDeCombates.nuevaLucha(personajeHumano, e);
+        
+        
         
         
         

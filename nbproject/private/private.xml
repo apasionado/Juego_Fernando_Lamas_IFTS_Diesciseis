@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Naara/Documents/NetBeansProjects/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Arranque.java</file>
             <file>file:/C:/Users/Naara/Documents/NetBeansProjects/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Sistemas/CreadorDeLugares.java</file>
-            <file>file:/C:/Users/Naara/Documents/NetBeansProjects/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Sistemas/CreadorDePersonajes.java</file>
+            <file>file:/C:/Users/Naara/Documents/NetBeansProjects/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Entidad/VivienteEnemigo.java</file>
+            <file>file:/C:/Users/Naara/Documents/NetBeansProjects/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Entidad/EntidadHumana.java</file>
+            <file>file:/C:/Users/Naara/Documents/NetBeansProjects/Juego_Fernando_Lamas_IFTS_Diesciseis/src/juego_fernando_lamas_ifts_diesciseis/Sistemas/Navegacion.java</file>
         </group>
     </open-files>
 </project-private>

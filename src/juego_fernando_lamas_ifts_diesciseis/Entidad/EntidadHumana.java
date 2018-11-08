@@ -23,7 +23,13 @@ public class EntidadHumana extends PersonajeAbstracto{
     
     public EntidadHumana(){
         super();
-        this.nombre = IOBase.ingresarTexto("Escribe el nombre de tu personaje ");
+        
+        if(!(this.nombre.isEmpty())){
+           this.nombre = IOBase.ingresarTexto("Escribe el nombre de tu personaje "); 
+        }else{
+            IOBase.mostrarTexto(this.nombre);
+        }
+        
         this.ConInventario = new Inventario();
         this.Saludable = new Salud();
         this.Luchador = new Lucha();

@@ -12,6 +12,8 @@ import ifts16.pp.juego.sistemas.NavegacionBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
 
 /**
  *
@@ -53,8 +55,11 @@ public class Navegacion extends NavegacionBase{
         Opcion eleccion = IOBase.elegirOpcion(ops);
         if (eleccion.esEntidad()) {
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
-            LugarBase lugar = (LugarBase) ent;
-            ubicacionActual = lugar; 
+            EntidadHumana personajeHumano = new EntidadHumana();
+            VivienteEnemigo enemigo = new VivienteEnemigo();
+            CreadorDeCombates.nuevaLucha(personajeHumano, (VivienteEnemigo) ent);
+            
+            
         }
     }
 

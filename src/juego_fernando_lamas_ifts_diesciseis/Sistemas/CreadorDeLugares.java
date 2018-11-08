@@ -10,11 +10,13 @@ import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
 
 
 public class CreadorDeLugares extends FabricaPrincipal {
     
-    public static void crearLugares(){
+    
+    public static void crearLugaresyPersonajes(){
         
         IOBase.mostrarTexto("Creando los mundos...");
         
@@ -30,11 +32,13 @@ public class CreadorDeLugares extends FabricaPrincipal {
         chequear por que no me anda el repositorio en conjunto de la navegacion
         */
         Viviente elsa = new Viviente();
-
+        VivienteEnemigo enemigo = new VivienteEnemigo();
             
         //Como conecto mi mundo con otros personajes        
         //la referencia del personaje no la pude hacer andar
         recepcion.agregarHablador(elsa.referencia("Un aldeano"));
+        
+        recepcion.agregarLuchador(enemigo.referencia("El ex suegro"));
         
         //Como conecto mi mundo con otros mundos
         recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
@@ -44,7 +48,8 @@ public class CreadorDeLugares extends FabricaPrincipal {
         /*Importar al repositorio principal*/
         RepositorioPrincipal.agregar(recepcion, "Recepcion");
         RepositorioPrincipal.agregar(habitacionPrincipal, "Habitacion Principal");
-        
+        RepositorioPrincipal.agregar(elsa, "Elsa Humerio");
+        RepositorioPrincipal.agregar(enemigo, "Enemigo");
         
     }
 

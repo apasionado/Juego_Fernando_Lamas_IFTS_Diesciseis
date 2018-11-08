@@ -20,7 +20,7 @@ public class CreadorDeCombates extends Sistema{
 
     
     
-    public static String nuevaLucha(EntidadHumana p, VivienteEnemigo e) throws InterruptedException{
+    public static String nuevaLucha(EntidadHumana p, VivienteEnemigo e){
 
         if(!(p.getActividad() == true && e.getActividad() == true)){
             String condicion = IOBase.ingresarTexto("Ambas entidades tienen que estar activas para poder pelear +"
@@ -35,7 +35,7 @@ public class CreadorDeCombates extends Sistema{
             
             IOBase.borrar();
             IOBase.mostrarTexto("¡The battle begins!", Color.red, Color.white);
-            Thread.sleep(1500);
+            
             while(ganador == null){
                 IOBase.borrar();
                 IOBase.mostrarTexto("En este encuentro se enfrentaran " + p.getNombre() + " vs " + e.getNombre());
