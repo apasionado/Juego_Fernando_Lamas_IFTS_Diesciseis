@@ -11,6 +11,8 @@ import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
+import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeCombates;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeLugares;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDePersonajes;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
@@ -38,10 +40,14 @@ public class Arranque {
         CreadorDeLugares.crearLugares();
         
         
-        
+        /*
         Navegacion.hablar(lugarDeInicio);
         
+        */
         
+        EntidadHumana personajeHumano = new EntidadHumana();
+        VivienteEnemigo e = new VivienteEnemigo();
+        CreadorDeCombates.nuevaLucha(personajeHumano, e);
         
         
         

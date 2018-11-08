@@ -5,9 +5,9 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Entidad;
 
+import ifts16.pp.juego.componentes.personaje.Luchador;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
 import ifts16.pp.juego.sistemas.IOBase;
-import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Inventario;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Lucha;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Salud;
 
@@ -15,18 +15,19 @@ import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Salud;
  *
  * @author Fernando Lamas
  */
-public class EntidadHumana extends PersonajeAbstracto{
+public class VivienteEnemigo extends PersonajeAbstracto{
     
-    public Inventario ConInventario;
+
     public Salud Saludable;
     public Lucha Luchador;
     
-    public EntidadHumana(){
-        super();
-        this.nombre = IOBase.ingresarTexto("Escribe el nombre de tu personaje ");
-        this.ConInventario = new Inventario();
-        this.Saludable = new Salud();
-        this.Luchador = new Lucha();
+    public VivienteEnemigo(){
+    super();  
+    this.id = this.getId();
+    this.nombre = "Elsa Humerio" + this.getId().toString();
+    
+    this.Saludable = new Salud();
+    this.Luchador = new Lucha();
     }
     
 }

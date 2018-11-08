@@ -25,10 +25,9 @@ public class Salud extends Componente implements Saludable{
     protected int daniar;
     protected Random azar;
     
-       Salud() {
+      public Salud() {
         this.saludMaxima = 10;
-        this.saludActual = this.saludMaxima;
-        this.azar = new Random();
+        this.saludActual = 10;
     }
     
     
@@ -72,15 +71,10 @@ public class Salud extends Componente implements Saludable{
 
     @Override
     public int daniar(int puntos) {
-        puntos = azar.nextInt(6);
-        if(!((this.saludActual + puntos) < this.daniarMaximo())){
-            IOBase.mostrarTexto("Golpe CRITICO", Color.red, Color.white);
-        return this.daniarMaximo();
-        }else{
         this.saludActual = this.saludActual - puntos;
-        IOBase.mostrarTexto("Haz daniado "+puntos+ " a tu oponente");
+        IOBase.mostrarTexto("Haz daniado por "+puntos+ " a tu oponente");
+        IOBase.mostrarTexto("Le quedan " + this.saludActual + " puntos de vida");
         return this.saludActual;
-        }
     }
   
 }

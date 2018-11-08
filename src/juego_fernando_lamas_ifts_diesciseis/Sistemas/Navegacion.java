@@ -43,7 +43,18 @@ public class Navegacion extends NavegacionBase{
         if (eleccion.esEntidad()) {
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
             LugarBase lugar = (LugarBase) ent;
-            ubicacionActual = lugar;
+            ubicacionActual = lugar; 
+        }
+    }
+    
+    public static void luchar(LugarBase ubicacion){
+                Opciones ops = ubicacion.getLuchadores()
+                .opcionesActivas("Elija los luchadores con quien pelear");
+        Opcion eleccion = IOBase.elegirOpcion(ops);
+        if (eleccion.esEntidad()) {
+            Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
+            LugarBase lugar = (LugarBase) ent;
+            ubicacionActual = lugar; 
         }
     }
 
