@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Entidad;
+package juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
 
-import ifts16.pp.juego.componentes.personaje.Luchador;
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
-import ifts16.pp.juego.sistemas.IOBase;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Lucha;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Salud;
 

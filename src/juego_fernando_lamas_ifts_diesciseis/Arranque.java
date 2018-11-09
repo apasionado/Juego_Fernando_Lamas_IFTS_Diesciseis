@@ -5,7 +5,7 @@
  */
 package juego_fernando_lamas_ifts_diesciseis;
 
-import ifts16.pp.juego.entidades.LugarBase;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;

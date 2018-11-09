@@ -6,17 +6,15 @@
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
 import ifts16.pp.juego.entidades.Entidad;
-import ifts16.pp.juego.entidades.LugarBase;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
-import static ifts16.pp.juego.sistemas.NavegacionBase.comerciar;
-import static ifts16.pp.juego.sistemas.NavegacionBase.irPorPortal;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import ifts16.pp.juego.sistemas.Sistema;
 import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
 import java.awt.Color;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.VivienteEnemigo;
 
 /**
  *
@@ -50,14 +48,8 @@ public class Navegacion extends Sistema{
             case "vecinos":
                 irAVecino(ubicacionActual);
                 break;
-            case "portal":
-                irPorPortal(ubicacionActual);
-                break;
             case "luchadores":
                 luchar(ubicacionActual);
-                break;
-            case "comerciantes":
-                comerciar(ubicacionActual);
                 break;
             case "habladores":
                 hablar(ubicacionActual);
@@ -67,6 +59,9 @@ public class Navegacion extends Sistema{
                 break;
             case "items":
                 recolectarItems(ubicacionActual);
+                break;
+            case "inventario":
+                consultarInventario(ubicacionActual);
                 break;
             default:
                 irAVecino(ubicacionActual);
@@ -107,8 +102,9 @@ public class Navegacion extends Sistema{
         Opcion eleccion = IOBase.elegirOpcion(ops);
         if (eleccion.esEntidad()) {
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
-            LugarBase lugar = (LugarBase) ent;
-            ubicacionActual = lugar; 
+            EntidadHumana p = new EntidadHumana();
+            p.ConInventario.agregarCantidad(eleccion.getEntidadId(), 1);
+            IOBase.ingresarTexto("Has agregado " + eleccion.getTexto() + " a tu inventario");
         }
     }
     
@@ -126,6 +122,20 @@ public class Navegacion extends Sistema{
             
         }
     }
-
     
+        public static void consultarInventario(LugarBase ubicacion) throws InterruptedException{
+            EntidadHumana p = new EntidadHumana();
+        Opciones ops = p.ConInventario.items()
+                .opcionesActivas("Elija un item y vea sus acciones disponibles");
+        ops.agregar("ninguno", "No tengo items");
+        Opcion eleccion = IOBase.elegirOpcion(ops);
+        if (eleccion.esComando() && eleccion.getComando().equalsIgnoreCase("ninguno")) {
+            iniciar(ubicacionActual);
+        } else {
+            if (eleccion.esEntidad()) {
+            Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
+            ControlDeInventario.consultaInventario(p);
+            }
+        }
+    }
 }

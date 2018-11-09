@@ -6,7 +6,6 @@
 package juego_fernando_lamas_ifts_diesciseis.Entidad;
 
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
-import ifts16.pp.juego.sistemas.IOBase;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Inventario;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Lucha;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Salud;
@@ -24,14 +23,11 @@ public class EntidadHumana extends PersonajeAbstracto{
     public EntidadHumana(){
         super();
         
-        this.nombre = IOBase.ingresarTexto("Escribe el nombre de tu personaje "); 
-            
-        
-        
+        this.nombre = "Nombre sin asignar still";
         this.ConInventario = new Inventario();
         this.Saludable = new Salud();
-        this.Luchador = new Lucha();
         this.Saludable.establecerSalud(10);
+        
     }
     
 }

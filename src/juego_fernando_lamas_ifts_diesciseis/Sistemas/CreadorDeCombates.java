@@ -12,7 +12,7 @@ import ifts16.pp.juego.utiles.Opciones;
 import java.awt.Color;
 import java.util.Random;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.VivienteEnemigo;
 
 /**
  *
@@ -284,7 +284,7 @@ public class CreadorDeCombates extends Sistema{
                  return ganador;
              }   
              if(!(ganador == null)){
-                 IOBase.mostrarTexto("Si estas viendo esto hay un error en el codigo");
+                 IOBase.ingresarTexto("Si estas viendo esto hay un error en el codigo");
                  guanteado = "termina yaaa";
                  return guanteado;
             }
@@ -297,11 +297,11 @@ public class CreadorDeCombates extends Sistema{
     
 
     public static String ruletaRusa(EntidadHumana p,VivienteEnemigo e){
-        
+        return IOBase.ingresarTexto("En construccion");
     }
     
     public static String lejanoOeste(EntidadHumana p, VivienteEnemigo e){
-        
+        return IOBase.ingresarTexto("En construccion"); 
     }
     
 }

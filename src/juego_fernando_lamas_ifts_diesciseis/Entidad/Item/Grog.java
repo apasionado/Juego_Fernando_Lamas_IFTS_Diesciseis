@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego_fernando_lamas_ifts_diesciseis.Item;
+package juego_fernando_lamas_ifts_diesciseis.Entidad.Item;
 
 import ifts16.pp.juego.entidades.ItemAbstracto;
-import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.utiles.ConOpciones;
-import ifts16.pp.juego.utiles.MapaDeOpciones;
-import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
-import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Carga;
+import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Guardable;
 
 /**
  *
@@ -19,31 +16,28 @@ import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Carga;
  */
 public class Grog extends ItemAbstracto implements ConOpciones {
         
-    public Carga Cargado;
+    //si no digo  que grog es inventariable nunca podre agregarlo
+    public Guardable Inventariable;
     
     public Grog(){
     super();
-    this.nombre = "Grog" + this.getId().toString();
-    this.Cargado = new Carga();
+    this.nombre = "Grog";
+    this.Inventariable = new Guardable();
     }
     
-    //mostrar al profesor como hice estas opciones
-     MapaDeOpciones mapa = new MapaDeOpciones();
-     Opciones listaDeOpciones = new Opciones();
-     Opcion eleccion = IOBase.elegirOpcion(listaDeOpciones);
+     
      
     public Opciones opciones() {
         
         
-       
+       Opciones listaDeOpciones = new Opciones();
         
         
         listaDeOpciones.agregar("1", "Beber");
         listaDeOpciones.agregar("2", "Tirar");
         listaDeOpciones.agregar("3", "Observar");
         
-        
-        mapa.poner("irse", listaDeOpciones);
+
         
         return listaDeOpciones;
         
