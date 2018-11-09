@@ -275,6 +275,7 @@ public class CreadorDeCombates extends Sistema{
             }
             if(e.Saludable.saludActual() == 0){
                  ganador = IOBase.ingresarTexto("El ganador de la pelea es " + p.getNombre());
+                 guanteado = "si";
                  return ganador;
              }
              if(p.Saludable.saludActual() == 0){
@@ -282,12 +283,18 @@ public class CreadorDeCombates extends Sistema{
                  IOBase.mostrarTexto("HAS PERDIDO");
                  return ganador;
              }   
+             if(!(ganador == null)){
+                 IOBase.mostrarTexto("Si estas viendo esto hay un error en el codigo");
+                 guanteado = "termina yaaa";
+                 return guanteado;
             }
         }
         }
         String metioCualquierCosa = IOBase.ingresarTexto("Ingrese entidades validas");
         return metioCualquierCosa;
     }
+    }
+    
 
     public static String ruletaRusa(EntidadHumana p,VivienteEnemigo e){
         
