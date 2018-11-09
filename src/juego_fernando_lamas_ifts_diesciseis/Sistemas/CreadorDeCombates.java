@@ -200,12 +200,12 @@ public class CreadorDeCombates extends Sistema{
                     
                     if(!("gUANTASOS".equals(resultado2))){
                     IOBase.borrar();
-                    p.Saludable.daniar(1);
+                    p.Saludable.daniar(3);
                     IOBase.mostrarTexto("Ingrese cualquier letra para continuar");
                     IOBase.mostrarTexto("EQUIVOCADO!! Perdiste un punto de vida");
                     IOBase.ingresarTexto("Tu salud actual es " + p.Saludable.saludActual());
                     }else{
-                    e.Saludable.daniar(1);
+                    e.Saludable.daniar(3);
                     IOBase.borrar();
                     IOBase.mostrarTexto("Ingrese cualquier letra para continuar");
                     IOBase.mostrarTexto("CORRECTO! Has daniado en 1 al enemigo");
