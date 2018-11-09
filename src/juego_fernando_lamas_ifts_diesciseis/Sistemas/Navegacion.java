@@ -8,10 +8,13 @@ package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
-import ifts16.pp.juego.sistemas.NavegacionBase;
+import static ifts16.pp.juego.sistemas.NavegacionBase.comerciar;
+import static ifts16.pp.juego.sistemas.NavegacionBase.irPorPortal;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
+import ifts16.pp.juego.sistemas.Sistema;
 import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
+import java.awt.Color;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
 
@@ -19,7 +22,67 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
  *
  * @author Fernando Lamas
  */
-public class Navegacion extends NavegacionBase{
+public class Navegacion extends Sistema{
+    
+        public static LugarBase ubicacionActual;
+    
+    public static void iniciar(LugarBase inicio) throws InterruptedException {
+        ubicacionActual = inicio;
+        while (ubicacionActual != null) {
+            IOBase.borrar();
+            IOBase.mostrarTexto(ubicacionActual.getNombre(), Color.BLUE, Color.WHITE);
+            IOBase.mostrarTexto(ubicacionActual.getDescripcion());
+            Opciones ops = ubicacionActual.opciones("Elija que hacer en este lugar");
+            ops.agregar("ninguno", "Salir del juego");
+            Opcion eleccion = IOBase.elegirOpcion(ops);
+            IOBase.mostrarTexto("Eligio: " + eleccion.getTexto());
+            if (eleccion.esComando() && eleccion.getComando().equalsIgnoreCase("ninguno")) {
+                ubicacionActual = null;
+            } else {
+                realizarAccion(eleccion);
+            }
+        }
+        IOBase.mostrarTexto("Fin del recorrido");
+    }
+    
+    public static void realizarAccion(Opcion op) throws InterruptedException {
+        switch (op.getComando()) {
+            case "vecinos":
+                irAVecino(ubicacionActual);
+                break;
+            case "portal":
+                irPorPortal(ubicacionActual);
+                break;
+            case "luchadores":
+                luchar(ubicacionActual);
+                break;
+            case "comerciantes":
+                comerciar(ubicacionActual);
+                break;
+            case "habladores":
+                hablar(ubicacionActual);
+                break;
+            case "misiones":
+                hacerMisiones(ubicacionActual);
+                break;
+            case "items":
+                recolectarItems(ubicacionActual);
+                break;
+            default:
+                irAVecino(ubicacionActual);
+                break;
+        }
+    }
+    
+    public static void irAVecino(LugarBase ubicacion) {
+        Opciones ops = ubicacion.getHabladores()
+                .opcionesActivas("Elija el lugar limítrofe a ir.");
+        Opcion eleccion = IOBase.elegirOpcion(ops);
+        IOBase.mostrarTexto("Eligio ir a " + eleccion.getTexto());
+        if (eleccion.esEntidad()) {
+            ubicacionActual = (LugarBase) RepositorioPrincipal.traer(eleccion.getEntidadId());
+        }
+    }
     
     
     public static void hablar(LugarBase ubicacion) {
@@ -49,15 +112,16 @@ public class Navegacion extends NavegacionBase{
         }
     }
     
-    public static void luchar(LugarBase ubicacion){
+    public static void luchar(LugarBase ubicacion) throws InterruptedException{
                 Opciones ops = ubicacion.getLuchadores()
                 .opcionesActivas("Elija los luchadores con quien pelear");
         Opcion eleccion = IOBase.elegirOpcion(ops);
         if (eleccion.esEntidad()) {
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
-            EntidadHumana personajeHumano = new EntidadHumana();
-            VivienteEnemigo enemigo = new VivienteEnemigo();
-            CreadorDeCombates.nuevaLucha(personajeHumano, (VivienteEnemigo) ent);
+            EntidadHumana p = new EntidadHumana();
+            VivienteEnemigo e = new VivienteEnemigo();
+            
+            CreadorDeCombates.nuevaLucha(p,e);
             
             
         }

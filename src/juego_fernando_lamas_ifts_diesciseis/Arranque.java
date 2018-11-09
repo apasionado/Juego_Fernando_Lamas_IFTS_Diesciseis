@@ -5,15 +5,11 @@
  */
 package juego_fernando_lamas_ifts_diesciseis;
 
-import ifts16.pp.juego.entidades.Entidad;
 import ifts16.pp.juego.entidades.LugarBase;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import java.awt.EventQueue;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDeLugares;
-import juego_fernando_lamas_ifts_diesciseis.Sistemas.CreadorDePersonajes;
 import juego_fernando_lamas_ifts_diesciseis.Sistemas.Navegacion;
 /**
  *
@@ -27,12 +23,6 @@ public class Arranque {
         
         IOBase ventana = new IOBase();
         EventQueue.invokeLater(ventana);
-        /*
-        EntidadHumana personajeHumano = new EntidadHumana();
-        CreadorDePersonajes.crearPersonajeJugador(personajeHumano);
-        IOBase.ingresarTexto("Bienvenido " + personajeHumano.getNombre() + ". "
-                + "Ingrese cualquier caracter para continuar");
-        */
         
         
         CreadorDeLugares.crearLugaresyPersonajes();
@@ -46,7 +36,7 @@ public class Arranque {
         //PARECIERA QUE NAVEGANCION.INICIAR ESTÁ TOMANDO LUCHAR DEL FRAMEWORK Y NO DEL MIO
         
         
-        Navegacion.luchar(lugarDeInicio);
+        Navegacion.iniciar(lugarDeInicio);
         
         /*
         Navegacion.hablar(lugarDeInicio);

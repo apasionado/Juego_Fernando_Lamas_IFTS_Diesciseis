@@ -29,25 +29,6 @@ public class Viviente extends PersonajeAbstracto{
     
     }
     
-    public void conversacionPrincipalEnRecepcion(EntidadHumana jugador){
-        
-        MapaDeOpciones m = new MapaDeOpciones();
-        Opciones o = new Opciones();
-        
-        m.poner("1", o);
-        
-        
-        o.agregar("1", "Conocido dirás?");
-        o.agregar("2", "Que tal... mira estoy buscando al señor Gomes");
-        o.agregar("3", "¿Quien sos y que haces aca?");
-        
-        
-        IOBase.mostrarTexto("Bienvenido tu... ehh... quien eres? " , Color.darkGray, Color.white);
-        IOBase.ingresarTexto("Soy...");
-        
-        IOBase.mostrarTexto("Ah... si... " + jugador.getNombre() + " me pareces conosido");
 
-       
-    }
     
 }
