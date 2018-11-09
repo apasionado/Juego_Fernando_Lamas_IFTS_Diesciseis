@@ -10,7 +10,7 @@ import ifts16.pp.juego.utiles.MapaDeOpciones;
 import ifts16.pp.juego.utiles.Opciones;
 import java.awt.Color;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 
 /**
  *

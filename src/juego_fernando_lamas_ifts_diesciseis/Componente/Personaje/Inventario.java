@@ -6,11 +6,13 @@
 package juego_fernando_lamas_ifts_diesciseis.Componente.Personaje;
 
 import ifts16.pp.juego.componentes.Componente;
+import ifts16.pp.juego.componentes.Referencia;
 import ifts16.pp.juego.componentes.ReferenciaItem;
 import ifts16.pp.juego.componentes.Referencias;
 import ifts16.pp.juego.componentes.item.Inventariable;
 import ifts16.pp.juego.componentes.personaje.ConInventario;
 import ifts16.pp.juego.entidades.ItemAbstracto;
+import static ifts16.pp.juego.entidades.Tipo.Item;
 import ifts16.pp.juego.sistemas.IOBase;
 import java.util.UUID;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Carga;
@@ -22,6 +24,7 @@ import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Carga;
 public class Inventario extends Componente implements ConInventario {
         
     public Carga Cargado;
+    protected ItemAbstracto item;
     
     
     public Inventario(){
@@ -38,6 +41,7 @@ public class Inventario extends Componente implements ConInventario {
             IOBase.mostrarTexto("No tienes espacio para cargar este item");
             return false;
         }else{
+            
             item.agregar(1);
             IOBase.mostrarTexto("Se ha agregado 1 " + item.toString() + " a tu inventario");
             
@@ -60,9 +64,9 @@ public class Inventario extends Componente implements ConInventario {
 
     @Override
     public boolean reemplazar(UUID id, Inventariable item) {
-        if(!(this.RefInventario.existe(id))){
+        if(!(this.item.getActividad())){
             
-            IOBase.mostrarTexto("No se encuentra el item que intentas remaplazar");
+            IOBase.mostrarTexto("El item que intentas remplazar no esta activo en Inventario Componentes");
             
             return false;
             
@@ -82,14 +86,6 @@ public class Inventario extends Componente implements ConInventario {
 
     @Override
     public int agregarCantidad(UUID id, int cantidad) {
-        
-        if(!(this.item(id) == null)){
-            
-            cantidad = cantidad + 1;
-            
-        }else{
-            
-        }
         return cantidad;
     }
 
@@ -110,13 +106,16 @@ public class Inventario extends Componente implements ConInventario {
     
     @Override
     public Referencias<ReferenciaItem> items() {
-        //Como se usan las referencias?
+        Referencia itemRef = new Referencia(this.item.getId(),Item,this.item.getNombre()) {};
+        this.RefInventario.agregar(itemRef);
         return this.RefInventario;
     }
 
     @Override
     public ItemAbstracto item(UUID id) {
-        return this.item(id);
+        
+        //esto no deberia ser asi
+      return this.item;
     }
 
 

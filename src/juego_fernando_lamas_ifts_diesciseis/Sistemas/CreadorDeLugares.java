@@ -5,12 +5,14 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
-import ifts16.pp.juego.entidades.LugarBase;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.LugarBase;
 import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.VivienteEnemigo;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Item.Grog;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.Recepcion;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.VivienteEnemigo;
 
 
 public class CreadorDeLugares extends FabricaPrincipal {
@@ -20,7 +22,7 @@ public class CreadorDeLugares extends FabricaPrincipal {
         
         IOBase.mostrarTexto("Creando los mundos...");
         
-        LugarBase recepcion = new LugarBase("Recepcion", "Ingreso del lugar");
+        Recepcion recepcion = new Recepcion("Recepcion", "Una sala de estar");
         
         CreadorDeLugares.agregarIdLugar(recepcion.getId());
         recepcion.setDescripcion("Una sala de estar");
@@ -33,11 +35,12 @@ public class CreadorDeLugares extends FabricaPrincipal {
         */
         Viviente elsa = new Viviente();
         VivienteEnemigo enemigo = new VivienteEnemigo();
+        Grog grog = new Grog();
             
         //Como conecto mi mundo con otros personajes        
         //la referencia del personaje no la pude hacer andar
         recepcion.agregarHablador(elsa.referencia("Un aldeano"));
-        
+        recepcion.agregarItem(grog.referencia("Una botella de grog"));
         recepcion.agregarLuchador(enemigo.referencia("El ex suegro"));
         
         //Como conecto mi mundo con otros mundos
