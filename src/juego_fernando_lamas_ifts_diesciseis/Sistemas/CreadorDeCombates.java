@@ -12,7 +12,7 @@ import ifts16.pp.juego.utiles.Opciones;
 import java.awt.Color;
 import java.util.Random;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.VivienteEnemigo;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 
 /**
  *
@@ -21,10 +21,10 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.VivienteEnemigo;
 public class CreadorDeCombates extends Sistema{
     
     public static EntidadHumana per;
-    public static VivienteEnemigo ene;
-
+    public static Viviente ene;
+    Random azar = new Random();
     
-    public static void nuevaLucha(EntidadHumana p, VivienteEnemigo e) throws InterruptedException{
+    public static void nuevaLucha(EntidadHumana p, Viviente e) throws InterruptedException{
         per = p;
         ene = e;
         
@@ -32,6 +32,7 @@ public class CreadorDeCombates extends Sistema{
         ops.agregar("fibonacci", "Fibonacci");
         ops.agregar("ruleta rusa", "Ruleta Rusa");
         ops.agregar("lejano oeste", "Lejano oeste");
+        ops.agregar("reacciona", "Rapido reacciona!");
         ops.agregar("ya fue", "A los guantasos");
         Opcion eleccion = IOBase.elegirOpcion(ops);
         IOBase.mostrarTexto("Eligio: " + eleccion.getTexto());
@@ -52,13 +53,16 @@ public class CreadorDeCombates extends Sistema{
             case "lejano oeste":
                 lejanoOeste(per,ene);
                 break;
+            case "reacciona":
+                reaccionaAhora(per,ene);
+                break;
             default:
                 aLosGuantasos(per, ene);
                 break;
         }
     }
     
-    public static String luchaFibonacci(EntidadHumana p,VivienteEnemigo e) throws InterruptedException{
+    public static String luchaFibonacci(EntidadHumana p,Viviente e) throws InterruptedException{
         
         if(!(p.getActividad() == true && e.getActividad() == true)){
             String condicion = IOBase.ingresarTexto("Ambas entidades tienen que estar activas para poder pelear +"
@@ -124,7 +128,7 @@ public class CreadorDeCombates extends Sistema{
         return metioCualquierCosa;
     }
     
-    public static String aLosGuantasos(EntidadHumana p, VivienteEnemigo e) throws InterruptedException{
+    public static String aLosGuantasos(EntidadHumana p, Viviente e) throws InterruptedException{
         
         
         if(!(p.getActividad() == true && e.getActividad() == true)){
@@ -144,14 +148,14 @@ public class CreadorDeCombates extends Sistema{
             IOBase.borrar();
             IOBase.mostrarTexto("Escribe la palabra identicamente a como aparece");
             IOBase.ingresarTexto("Estas listo?");
-            Thread.sleep(1500);
+            sThread.sleep(1500);
             String guanteado = null;
             while(guanteado == null){
             IOBase.borrar();
             IOBase.mostrarTexto("");
             IOBase.mostrarTexto("");
             IOBase.mostrarTexto("");
-            Random azar = new Random();
+            
             int salio = azar.nextInt(6);
             switch(salio){
                 case 1:
@@ -295,12 +299,68 @@ public class CreadorDeCombates extends Sistema{
     }
     }
     
+    public static String reaccionAhora(EntidadHumana p, Viviente e) throws InterruptedException{
+    
+        
+        
+        if(!(p.getActividad() == true && e.getActividad() == true)){
+            String condicion = IOBase.ingresarTexto("Ambas entidades tienen que estar activas para poder pelear +"
+                    + "Ingrese cualquier tecla para continuar");
+            return condicion;
+            
+        }else{
+            
+        String ganador = null;
+        IOBase.borrar();
+        IOBase.mostrarTexto("¡The battle begins!", Color.red, Color.white);
+        
 
-    public static String ruletaRusa(EntidadHumana p,VivienteEnemigo e){
+        Thread.sleep(1500);
+
+        IOBase.borrar();
+        
+        IOBase.mostrarTexto("Escribe la palabra identicamente a como aparece la cantidad de veces"
+        
+                + " necesarias");
+            
+           
+        IOBase.ingresarTexto("Estas listo?");
+        
+        Thread.sleep(1500);
+
+        while(ganador == null){
+            
+            //hacer que cada un segundo corte y si no ingreso la tecla correspondiente una cantidad d veces pedida sacar vida){
+            String roundexitoso = null;
+            for(int i = 0; i > 2; i++){
+            azar.
+            
+            
+            i++;
+            }
+            
+            if()
+            
+            if(e.Saludable.saludActual() == 0){
+                 ganador = IOBase.ingresarTexto("El ganador de la pelea es " + p.getNombre());
+                 
+                 return ganador;
+             }
+             if(p.Saludable.saludActual() == 0){
+                 ganador = IOBase.ingresarTexto("El ganador de la pelea es " + e.getNombre());
+                 IOBase.mostrarTexto("HAS PERDIDO");
+                 return ganador;
+             }
+        
+        String metioCualquierCosa = IOBase.ingresarTexto("Ingrese entidades validas");
+        return metioCualquierCosa;
+    }
+
+    public static String ruletaRusa(EntidadHumana p,Viviente e){
         return IOBase.ingresarTexto("En construccion");
     }
     
-    public static String lejanoOeste(EntidadHumana p, VivienteEnemigo e){
+    public static String lejanoOeste(EntidadHumana p, Viviente e){
         return IOBase.ingresarTexto("En construccion"); 
     }
     

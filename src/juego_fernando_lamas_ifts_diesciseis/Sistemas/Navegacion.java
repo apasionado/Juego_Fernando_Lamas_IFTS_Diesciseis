@@ -87,8 +87,7 @@ public class Navegacion extends Sistema{
         IOBase.mostrarTexto("Eligio hablar con " + eleccion.getTexto());
         if(eleccion.esEntidad()){
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
-            LugarBase lugar = (LugarBase) ent;
-            ubicacionActual = lugar;
+            
         }
     }
     
