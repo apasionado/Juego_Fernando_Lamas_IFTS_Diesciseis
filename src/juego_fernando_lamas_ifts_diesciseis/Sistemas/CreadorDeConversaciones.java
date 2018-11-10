@@ -5,10 +5,8 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
-import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.utiles.MapaDeOpciones;
 import ifts16.pp.juego.utiles.Opciones;
-import java.awt.Color;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 
@@ -19,11 +17,14 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 public class CreadorDeConversaciones {
     
     
-        public void conversacionPrincipalEnRecepcion(EntidadHumana p, Viviente v){
+        public void listaDeConversaciones(EntidadHumana p, Viviente v){
         
+            
+            
         MapaDeOpciones m = new MapaDeOpciones();
         Opciones o = new Opciones();
         
+        m.poner("saludo1", o);
         
 
        

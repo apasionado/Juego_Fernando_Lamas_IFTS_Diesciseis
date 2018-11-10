@@ -27,9 +27,10 @@ public class Arranque {
         
         CreadorDeLugares.crearLugaresyPersonajes();
         
+        IOBase.mostrarTexto("Un dia cualquiera entrando al IFTS 16...");
         
         
-        LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("Recepcion");
+        LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("Entrada");
         
         
         

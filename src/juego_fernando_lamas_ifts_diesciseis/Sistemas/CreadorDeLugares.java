@@ -10,7 +10,7 @@ import ifts16.pp.juego.sistemas.FabricaPrincipal;
 import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Item.Grog;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.Recepcion;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.Entrada;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.VivienteEnemigo;
 
@@ -22,12 +22,12 @@ public class CreadorDeLugares extends FabricaPrincipal {
         
         IOBase.mostrarTexto("Creando los mundos...");
         
-        Recepcion recepcion = new Recepcion("Recepcion", "Una sala de estar");
+        Entrada entrada = new Entrada("Entrada", "Un pasillo con una sala de estar");
         
-        CreadorDeLugares.agregarIdLugar(recepcion.getId());
-        recepcion.setDescripcion("Una sala de estar");
+        CreadorDeLugares.agregarIdLugar(entrada.getId());
+        entrada.setDescripcion("Entrando al IFTS te vas dirigiendo al aula...");
 
-        LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
+        LugarBase aula = new LugarBase("Aula", "Ingresar al aula");
         
         //Instancio las entidades y los items para crearlas? SIRVE?
         /*
@@ -39,18 +39,18 @@ public class CreadorDeLugares extends FabricaPrincipal {
             
         //Como conecto mi mundo con otros personajes        
         //la referencia del personaje no la pude hacer andar
-        recepcion.agregarHablador(elsa.referencia("Un aldeano"));
-        recepcion.agregarItem(grog.referencia("Una botella de grog"));
-        recepcion.agregarLuchador(enemigo.referencia("El ex suegro"));
+        entrada.agregarHablador(elsa.referencia("Un aldeano"));
+        entrada.agregarItem(grog.referencia("Una botella de grog"));
+        entrada.agregarLuchador(enemigo.referencia("El ex suegro"));
         
         //Como conecto mi mundo con otros mundos
-        recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
+        entrada.agregarVecino(aula.referencia("Habitacion principal"));
 
-        habitacionPrincipal.agregarVecino(recepcion.referencia("Volver a la recepcion"));
+        aula.agregarVecino(entrada.referencia("Volver a la recepcion"));
         
         /*Importar al repositorio principal*/
-        RepositorioPrincipal.agregar(recepcion, "Recepcion");
-        RepositorioPrincipal.agregar(habitacionPrincipal, "Habitacion Principal");
+        RepositorioPrincipal.agregar(entrada, "Recepcion");
+        RepositorioPrincipal.agregar(aula, "Habitacion Principal");
         RepositorioPrincipal.agregar(elsa, "Elsa Humerio");
         RepositorioPrincipal.agregar(enemigo, "Enemigo");
         

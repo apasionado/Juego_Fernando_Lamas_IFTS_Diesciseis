@@ -14,13 +14,13 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.Item.Grog;
  *
  * @author Fernando Lamas
  */
-public class Recepcion extends LugarBase implements ConItems {
+public class Entrada extends LugarBase implements ConItems {
 
     //Todo sobre con items
     Referencias lista = new Referencias();
     Grog grog = new Grog();
 
-    public Recepcion(String nombre, String descripcion) {
+    public Entrada(String nombre, String descripcion) {
         
         
         super(nombre, descripcion);
