@@ -48,8 +48,9 @@ public class CreadorDeLugares extends FabricaPrincipal {
 
         aula.agregarVecino(entrada.referencia("Volver a la recepcion"));
         
+        
         /*Importar al repositorio principal*/
-        RepositorioPrincipal.agregar(entrada, "Recepcion");
+        RepositorioPrincipal.agregar(entrada, "Entrada");
         RepositorioPrincipal.agregar(aula, "Habitacion Principal");
         RepositorioPrincipal.agregar(elsa, "Elsa Humerio");
         RepositorioPrincipal.agregar(enemigo, "Enemigo");

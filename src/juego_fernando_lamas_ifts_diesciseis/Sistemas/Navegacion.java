@@ -87,8 +87,7 @@ public class Navegacion extends Sistema{
         IOBase.mostrarTexto("Eligio hablar con " + eleccion.getTexto());
         if(eleccion.esEntidad()){
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
-            LugarBase lugar = (LugarBase) ent;
-            ubicacionActual = lugar;
+            
         }
     }
     
@@ -101,9 +100,10 @@ public class Navegacion extends Sistema{
                 .opcionesActivas("Elija los items a recolectar");
         Opcion eleccion = IOBase.elegirOpcion(ops);
         if (eleccion.esEntidad()) {
-            Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
             EntidadHumana p = new EntidadHumana();
-            p.ConInventario.agregarCantidad(eleccion.getEntidadId(), 1);
+            String eleccionLista = eleccion.toString();
+            IOBase.mostrarTexto("Intentaste agregar " + eleccionLista);
+            p.agregarItem(eleccionLista);
             IOBase.ingresarTexto("Has agregado " + eleccion.getTexto() + " a tu inventario");
         }
     }
@@ -134,7 +134,7 @@ public class Navegacion extends Sistema{
         } else {
             if (eleccion.esEntidad()) {
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
-            ControlDeInventario.consultaInventario(p);
+            ;
             }
         }
     }

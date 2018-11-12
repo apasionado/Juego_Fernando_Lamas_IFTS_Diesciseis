@@ -328,7 +328,6 @@ public class LugarBase extends LugarAbstracto implements ConOpciones {
         this.items.agregar(item);
     }
 
-        
     /**
      * Crea automaticamente una lista de opciones con lo que se puede hacer en el lugar.
      * @param mensaje El mensaje a mostrar antes de dar a elegir las opciones.

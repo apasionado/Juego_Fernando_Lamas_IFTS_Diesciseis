@@ -32,11 +32,6 @@ public class Arranque {
         
         LugarBase lugarDeInicio = (LugarBase) RepositorioPrincipal.traer("Entrada");
         
-        
-        
-        //PARECIERA QUE NAVEGANCION.INICIAR ESTÁ TOMANDO LUCHAR DEL FRAMEWORK Y NO DEL MIO
-        
-        
         Navegacion.iniciar(lugarDeInicio);
         
         /*
