@@ -366,6 +366,34 @@ public class CreadorDeCombates extends Sistema{
         IOBase.ingresarTexto("En construccion"); 
         nuevaLucha(per, ene);
 =======
+
+        while(ganador == null){
+            
+            //hacer que cada un segundo corte y si no ingreso la tecla correspondiente una cantidad d veces pedida sacar vida){
+            String roundexitoso = null;
+            for(int i = 0; i > 2; i++){
+            azar.
+            
+            
+            i++;
+            }
+            
+            if()
+            
+            if(e.Saludable.saludActual() == 0){
+                 ganador = IOBase.ingresarTexto("El ganador de la pelea es " + p.getNombre());
+                 
+                 return ganador;
+             }
+             if(p.Saludable.saludActual() == 0){
+                 ganador = IOBase.ingresarTexto("El ganador de la pelea es " + e.getNombre());
+                 IOBase.mostrarTexto("HAS PERDIDO");
+                 return ganador;
+             }
+        
+        String metioCualquierCosa = IOBase.ingresarTexto("Ingrese entidades validas");
+        return metioCualquierCosa;
+    }
     public static String ruletaRusa(EntidadHumana p,Viviente e){
         return IOBase.ingresarTexto("En construccion");
     }
