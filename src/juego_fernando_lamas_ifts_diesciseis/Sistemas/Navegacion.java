@@ -14,7 +14,7 @@ import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
 import java.awt.Color;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.VivienteEnemigo;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 
 /**
  *
@@ -87,14 +87,13 @@ public class Navegacion extends Sistema{
         IOBase.mostrarTexto("Eligio hablar con " + eleccion.getTexto());
         if(eleccion.esEntidad()){
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
-            
+            IOBase.mostrarTexto("En construccion, chequear CreadorDeConversaciones y unir con este");
         }
     }
     
     public static void hacerMisiones(LugarBase ubicacion){
-        
     }
-    
+
     public static void recolectarItems(LugarBase ubicacion){
         Opciones ops = ubicacion.getItems()
                 .opcionesActivas("Elija los items a recolectar");
@@ -116,11 +115,8 @@ public class Navegacion extends Sistema{
         if (eleccion.esEntidad()) {
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
             EntidadHumana p = new EntidadHumana();
-            VivienteEnemigo e = new VivienteEnemigo();
-            
+            Viviente e = new Viviente();
             CreadorDeCombates.nuevaLucha(p,e);
-            
-            
         }
     }
     
@@ -135,7 +131,6 @@ public class Navegacion extends Sistema{
         } else {
             if (eleccion.esEntidad()) {
             Entidad ent = RepositorioPrincipal.traer(eleccion.getEntidadId());
-            ;
             }
         }
     }

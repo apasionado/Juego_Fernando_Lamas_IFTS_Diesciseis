@@ -12,7 +12,6 @@ import ifts16.pp.juego.sistemas.RepositorioPrincipal;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Item.Grog;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.Entrada;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
-import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.VivienteEnemigo;
 
 
 public class CreadorDeLugares extends FabricaPrincipal {
@@ -34,14 +33,12 @@ public class CreadorDeLugares extends FabricaPrincipal {
         chequear por que no me anda el repositorio en conjunto de la navegacion
         */
         Viviente elsa = new Viviente();
-        VivienteEnemigo enemigo = new VivienteEnemigo();
         Grog grog = new Grog();
             
         //Como conecto mi mundo con otros personajes        
         //la referencia del personaje no la pude hacer andar
         entrada.agregarHablador(elsa.referencia("Un aldeano"));
         entrada.agregarItem(grog.referencia("Una botella de grog"));
-        entrada.agregarLuchador(enemigo.referencia("El ex suegro"));
         
         //Como conecto mi mundo con otros mundos
         entrada.agregarVecino(aula.referencia("Habitacion principal"));
@@ -53,8 +50,6 @@ public class CreadorDeLugares extends FabricaPrincipal {
         RepositorioPrincipal.agregar(entrada, "Entrada");
         RepositorioPrincipal.agregar(aula, "Habitacion Principal");
         RepositorioPrincipal.agregar(elsa, "Elsa Humerio");
-        RepositorioPrincipal.agregar(enemigo, "Enemigo");
-        
     }
 
 

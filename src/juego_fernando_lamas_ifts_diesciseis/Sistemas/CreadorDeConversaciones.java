@@ -21,6 +21,7 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 public class CreadorDeConversaciones {
     
     public static LugarBase Entrada;
+    public static EntidadHumana Inventario;
     
     
         public static void inicioConversacion(EntidadHumana p, Viviente v){
@@ -46,7 +47,7 @@ public class CreadorDeConversaciones {
         }
         
        public static void saludoConver(EntidadHumana p, Viviente v){
-            if(p.ConInventario.tienetalitemyestaactivo){
+            if(p.itemEstaEnLaLista(Inventario.esteItem("Bigote_Falso"))){
                 IOBase.mostrarTexto("Bien, estan en el aula de 4to", Color.blue, Color.white);
             }else{
                 IOBase.mostrarTexto("Quien sos vos flaco? tomatela por que te cago a trompadas", Color.red, Color.white);

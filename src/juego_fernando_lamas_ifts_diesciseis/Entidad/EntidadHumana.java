@@ -39,6 +39,18 @@ public class EntidadHumana extends PersonajeAbstracto{
             
 		return esteItem;
 	}
+        
+        public String esteItem(String item){
+            for(int i = 0; i > this.items.size(); i ++ ){
+                if(this.items.get(i).equals(item)){
+                    return item;
+                }else{
+                    IOBase.mostrarTexto("No se encontro el item que buscabas en EntidadHumana");
+                    return null;
+                }
+            }
+            return item;
+        }
 	
 	public void agregarItem(String item) {
                     this.items.add(item);
