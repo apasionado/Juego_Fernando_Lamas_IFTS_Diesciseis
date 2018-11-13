@@ -105,6 +105,7 @@ public class Navegacion extends Sistema{
             IOBase.mostrarTexto("Intentaste agregar " + eleccionLista);
             p.agregarItem(eleccionLista);
             IOBase.ingresarTexto("Has agregado " + eleccion.getTexto() + " a tu inventario");
+            //ESTO NO FUNCIONA AUN
         }
     }
     
