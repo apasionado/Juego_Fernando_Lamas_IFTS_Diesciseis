@@ -6,11 +6,11 @@
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
 import ifts16.pp.juego.sistemas.IOBase;
-import static ifts16.pp.juego.sistemas.NavegacionBase.ubicacionActual;
 import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
 import java.awt.Color;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.ListaDeItems;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.LugarBase;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 
@@ -21,7 +21,7 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 public class CreadorDeConversaciones {
     
     public static LugarBase Entrada;
-    public static EntidadHumana Inventario;
+    public static ListaDeItems Inventario;
     
     
         public static void inicioConversacion(EntidadHumana p, Viviente v){
@@ -47,7 +47,7 @@ public class CreadorDeConversaciones {
         }
         
        public static void saludoConver(EntidadHumana p, Viviente v){
-            if(p.itemEstaEnLaLista(Inventario.esteItem("Bigote_Falso"))){
+            if(Inventario.buscarPorElItem("bigote_falso")){
                 IOBase.mostrarTexto("Bien, estan en el aula de 4to", Color.blue, Color.white);
             }else{
                 IOBase.mostrarTexto("Quien sos vos flaco? tomatela por que te cago a trompadas", Color.red, Color.white);

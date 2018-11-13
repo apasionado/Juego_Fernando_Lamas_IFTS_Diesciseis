@@ -6,9 +6,6 @@
 package juego_fernando_lamas_ifts_diesciseis.Entidad;
 
 import ifts16.pp.juego.entidades.PersonajeAbstracto;
-import ifts16.pp.juego.sistemas.IOBase;
-import java.util.ArrayList;
-import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Inventario;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Lucha;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Salud;
 
@@ -18,7 +15,7 @@ import juego_fernando_lamas_ifts_diesciseis.Componente.Personaje.Salud;
  */
 public class EntidadHumana extends PersonajeAbstracto{
     
-    public Inventario ConInventario;
+    public ListaDeItems Inventario;
     public Salud Saludable;
     public Lucha Luchador;
     
@@ -28,55 +25,5 @@ public class EntidadHumana extends PersonajeAbstracto{
         this.nombre = "Nombre sin asignar still";
         this.Saludable = new Salud();
         this.Saludable.establecerSalud(10);
-        }
-    
-        //UNA SIMPLE LISTA QUE CUANDO AGARRA UN ITEM LO AGREGA A LA LISTA
-        //CON FUNCIONES DE YAPA PARA QUE ANDEN LOS ITEMS EN LAS PELEAS
-        private ArrayList<String> items;
-    
-	public String esteItem(int vector) {
-            String esteItem = this.items.get(vector); 
-            
-		return esteItem;
-	}
-        
-        public String esteItem(String item){
-            for(int i = 0; i > this.items.size(); i ++ ){
-                if(this.items.get(i).equals(item)){
-                    return item;
-                }else{
-                    IOBase.mostrarTexto("No se encontro el item que buscabas en EntidadHumana");
-                    return null;
-                }
-            }
-            return item;
-        }
-	
-	public void agregarItem(String item) {
-                    this.items.add(item);
-                    IOBase.ingresarTexto("El item fue agregado exitosamente");
-        }
-	
-	public void eliminarItem(String item) {
-                    this.items.add(item);
-                    IOBase.ingresarTexto("El item fue eliminado exitosamente");
-	}
-	
-	
-	public boolean itemEstaEnLaLista(String item) {
-		if(this.items.contains(item)) {
-			return true;
-		}
-		else {
-                    IOBase.ingresarTexto("El item que buscas no esta en la lista");
-			return false;
-		}
-	}
-        public void usarItem(String item){
-            if(itemEstaEnLaLista(item)){
-                switch(item){
-                    
-                }
-            }
         }
 }

@@ -14,6 +14,7 @@ import ifts16.pp.juego.utiles.Opcion;
 import ifts16.pp.juego.utiles.Opciones;
 import java.awt.Color;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.EntidadHumana;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.ListaDeItems;
 import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 
 /**
@@ -22,6 +23,7 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
  */
 public class Navegacion extends Sistema{
     
+        public static ListaDeItems listaItems;
         public static LugarBase ubicacionActual;
     
     public static void iniciar(LugarBase inicio) throws InterruptedException {
@@ -95,16 +97,15 @@ public class Navegacion extends Sistema{
     }
 
     public static void recolectarItems(LugarBase ubicacion){
-        Opciones ops = ubicacion.getItems()
-                .opcionesActivas("Elija los items a recolectar");
+        
+        Opciones ops = listaItems.opciones("Elija los items a recolectar");
         Opcion eleccion = IOBase.elegirOpcion(ops);
-        if (eleccion.esEntidad()) {
-            EntidadHumana p = new EntidadHumana();
-            String eleccionLista = eleccion.toString();
-            IOBase.mostrarTexto("Intentaste agregar " + eleccionLista);
-            p.agregarItem(eleccionLista);
-            IOBase.ingresarTexto("Has agregado " + eleccion.getTexto() + " a tu inventario");
-            //ESTO NO FUNCIONA AUN
+        if (eleccion.esComando()) {
+            IOBase.mostrarTexto("Intentaste agregar " + eleccion.getComando());
+            if(listaItems.existe(eleccion.getComando())){
+               listaItems.agregarItem(eleccion.getComando()); 
+               IOBase.ingresarTexto("Has agregado " + eleccion.getTexto() + " a tu inventario");
+            }            //AUN EN DESARROLLO
         }
     }
     
@@ -121,9 +122,7 @@ public class Navegacion extends Sistema{
     }
     
         public static void consultarInventario(LugarBase ubicacion) throws InterruptedException{
-            EntidadHumana p = new EntidadHumana();
-        Opciones ops = p.ConInventario.items()
-                .opcionesActivas("Elija un item y vea sus acciones disponibles");
+        Opciones ops = listaItems.itemsListosParaInteractuar();
         ops.agregar("ninguno", "No tengo items");
         Opcion eleccion = IOBase.elegirOpcion(ops);
         if (eleccion.esComando() && eleccion.getComando().equalsIgnoreCase("ninguno")) {
