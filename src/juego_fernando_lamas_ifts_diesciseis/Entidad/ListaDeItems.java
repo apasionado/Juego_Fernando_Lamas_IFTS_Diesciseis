@@ -15,7 +15,7 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.LugarBase;
  *
  * @author Fernando Lamas
  */
-public class ListaDeItems implements ConOpciones {
+public class ListaDeItems {
     
         public LugarBase ubicacionActual;
         
@@ -32,20 +32,25 @@ public class ListaDeItems implements ConOpciones {
         }
         
         public boolean existe(String item){
-            for(int i = 0; i > this.items.size(); i ++ ){
-                if(this.items.get(i).equals(item)){
-                    return true;
-                }else{
+            if(!(this.items.contains(item))){
                     IOBase.mostrarTexto("No se encontro el item que buscabas en EntidadHumana");
                     return false;
+                }else{
+                    return true;
                 }
-            }
-            return true;
+            
         }
 	
 	public void agregarItem(String item) {
-                    this.items.add(item);
+            if(!(item.isEmpty())){
+                    items.add(item);
                     IOBase.ingresarTexto("El item fue agregado exitosamente");
+            }else{
+                IOBase.mostrarTexto("Me estas dando un " + item + " null");
+            }
+                    
+        
+        
         }
 	
 	public void eliminarItem(String item) {
@@ -81,22 +86,5 @@ public class ListaDeItems implements ConOpciones {
         }
         */
 
-    @Override
-    public Opciones opciones() {
-        return null;
-    }
-
-    @Override
-    public Opciones opciones(String texto) {
-        Opciones iOps = new Opciones();
-        if(!(ubicacionActual == null)){
-            iOps.agregar("bigote_falso","Un bigote falso");
-           
-        }else{
-            IOBase.mostrarTexto("En el lugar donde te encuentras no hay objetos");
-        }
-        
-        return iOps;
-    }
-    //zayra interno 3044
 }
+

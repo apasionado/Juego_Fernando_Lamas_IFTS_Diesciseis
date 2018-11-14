@@ -60,7 +60,7 @@ public class Navegacion extends Sistema{
                 hacerMisiones(ubicacionActual);
                 break;
             case "items":
-                recolectarItems(ubicacionActual);
+                recolectarItems(listaItems);
                 break;
             case "inventario":
                 consultarInventario(ubicacionActual);
@@ -96,19 +96,26 @@ public class Navegacion extends Sistema{
     public static void hacerMisiones(LugarBase ubicacion){
     }
 
-    public static void recolectarItems(LugarBase ubicacion){
-        
-        Opciones ops = listaItems.opciones("Elija los items a recolectar");
-        Opcion eleccion = IOBase.elegirOpcion(ops);
+    public static void recolectarItems(ListaDeItems lista){
+        Opciones iOps = new Opciones();
+        if(!(ubicacionActual == null)){
+            iOps.agregar("bigote_falso","Un bigote falso");
+        }else{
+            IOBase.mostrarTexto("En el lugar donde te encuentras no hay objetos");
+        }
+        Opcion eleccion = IOBase.elegirOpcion(iOps);
         if (eleccion.esComando()) {
             IOBase.mostrarTexto("Intentaste agregar " + eleccion.getComando());
-            if(listaItems.existe(eleccion.getComando())){
-               listaItems.agregarItem(eleccion.getComando()); 
-               IOBase.ingresarTexto("Has agregado " + eleccion.getTexto() + " a tu inventario");
-            }            //AUN EN DESARROLLO
+            switch(eleccion.getComando()){
+                case "bigote_falso":
+            lista.agregarItem(eleccion.getComando());
+            IOBase.ingresarTexto("Has agregado " + eleccion.getTexto() + " a tu inventario");
+                    break;
+            }
+            }
         }
-    }
-    
+   
+   
     public static void luchar(LugarBase ubicacion) throws InterruptedException{
                 Opciones ops = ubicacion.getLuchadores()
                 .opcionesActivas("Elija los luchadores con quien pelear");
