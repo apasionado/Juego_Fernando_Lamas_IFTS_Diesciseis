@@ -5,14 +5,12 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
-import ifts16.pp.juego.sistemas.NavegacionBase;
+import ifts16.pp.juego.sistemas.Sistema;
 
 /**
  *
- * @author Fernando Lamas
+ * @author alumno
  */
-public class Navegacion extends NavegacionBase{
-    
-    
+public class Inventario extends Sistema{
     
 }
