@@ -5,37 +5,52 @@
  */
 package juego_fernando_lamas_ifts_diesciseis.Sistemas;
 
-import ifts16.pp.juego.entidades.LugarBase;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.LugarBase;
 import ifts16.pp.juego.sistemas.FabricaPrincipal;
+import ifts16.pp.juego.sistemas.IOBase;
 import ifts16.pp.juego.sistemas.RepositorioPrincipal;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Item.Grog;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Lugar.Entrada;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
 
 
 public class CreadorDeLugares extends FabricaPrincipal {
     
-    public static void crearLugares(){
+    
+    public static void crearLugaresyPersonajes(){
         
-        CreadorDePersonajes nuevoPersonaje = new CreadorDePersonajes();
+        IOBase.mostrarTexto("Creando los mundos...");
         
-        LugarBase recepcion = new LugarBase("Recepcion", "Ingreso del lugar");
+        Entrada entrada = new Entrada("Entrada", "Un pasillo con una sala de estar");
         
-        recepcion.activar();
+        CreadorDeLugares.agregarIdLugar(entrada.getId());
+        entrada.setDescripcion("Entrando al IFTS te vas dirigiendo al aula...");
+
+        LugarBase aula = new LugarBase("Aula", "Ingresar al aula");
         
-        /*Importar al repositorio principal*/
-        RepositorioPrincipal.agregar(recepcion, "Recepcion");
-        CreadorDeLugares.agregarIdLugar(recepcion.getId());
-        
-        LugarBase habitacionPrincipal = new LugarBase("Habitacion Principal", "Una habitacion llena de sorpresas");
+        //Instancio las entidades y los items para crearlas? SIRVE?
+        /*
+        chequear por que no me anda el repositorio en conjunto de la navegacion
+        */
+        Viviente elsa = new Viviente();
+        Grog grog = new Grog();
+            
+        //Como conecto mi mundo con otros personajes        
+        //la referencia del personaje no la pude hacer andar
+        entrada.agregarHablador(elsa.referencia("Un aldeano"));
+        entrada.agregarItem(grog.referencia("Una botella de grog"));
         
         //Como conecto mi mundo con otros mundos
-        recepcion.agregarVecino(habitacionPrincipal.referencia("Habitacion principal"));
-        recepcion.agregarHablador(RepositorioPrincipal.traer("Elsa_Humerio"));
+        entrada.agregarVecino(aula.referencia("Habitacion principal"));
+
+        aula.agregarVecino(entrada.referencia("Volver a la recepcion"));
         
-        recepcion.setDescripcion("Una sala de estar");
         
+        /*Importar al repositorio principal*/
+        RepositorioPrincipal.agregar(entrada, "Entrada");
+        RepositorioPrincipal.agregar(aula, "Habitacion Principal");
+        RepositorioPrincipal.agregar(elsa, "Elsa Humerio");
     }
-    
-    
-    
-    
-    
+
+
 }
