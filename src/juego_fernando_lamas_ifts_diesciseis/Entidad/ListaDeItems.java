@@ -74,6 +74,7 @@ public class ListaDeItems {
             for(int i = 0; i > items.size(); i++){
                 if(!(items.get(i).isEmpty()))
                 itemListos.agregar("" + i + "",items.get(i));
+                
             }return itemListos;
         }
         /*

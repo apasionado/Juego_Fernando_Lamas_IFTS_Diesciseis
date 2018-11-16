@@ -23,7 +23,7 @@ import juego_fernando_lamas_ifts_diesciseis.Entidad.Viviente.Viviente;
  */
 public class Navegacion extends Sistema{
     
-        public static ListaDeItems listaItems;
+        public static ListaDeItems listaItems = new ListaDeItems();
         public static LugarBase ubicacionActual;
     
     public static void iniciar(LugarBase inicio) throws InterruptedException {
@@ -72,7 +72,7 @@ public class Navegacion extends Sistema{
     }
     
     public static void irAVecino(LugarBase ubicacion) {
-        Opciones ops = ubicacion.getHabladores()
+        Opciones ops = ubicacion.getVecinos()
                 .opcionesActivas("Elija el lugar limítrofe a ir.");
         Opcion eleccion = IOBase.elegirOpcion(ops);
         IOBase.mostrarTexto("Eligio ir a " + eleccion.getTexto());
@@ -100,6 +100,7 @@ public class Navegacion extends Sistema{
         Opciones iOps = new Opciones();
         if(!(ubicacionActual == null)){
             iOps.agregar("bigote_falso","Un bigote falso");
+            iOps.agregar("grog", "Una botella de grog");
         }else{
             IOBase.mostrarTexto("En el lugar donde te encuentras no hay objetos");
         }
@@ -110,7 +111,11 @@ public class Navegacion extends Sistema{
                 case "bigote_falso":
             lista.agregarItem(eleccion.getComando());
             IOBase.ingresarTexto("Has agregado " + eleccion.getTexto() + " a tu inventario");
-                    break;
+                 break;
+                case "grog":
+            lista.agregarItem(eleccion.getComando());
+            IOBase.ingresarTexto("Has agregado " + eleccion.getTexto() + "a tu inventario");
+                break;
             }
             }
         }

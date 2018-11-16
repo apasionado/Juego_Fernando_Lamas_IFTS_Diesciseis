@@ -24,32 +24,34 @@ public class CreadorDeLugares extends FabricaPrincipal {
         Entrada entrada = new Entrada("Entrada", "Un pasillo con una sala de estar");
         
         CreadorDeLugares.agregarIdLugar(entrada.getId());
-        entrada.setDescripcion("Entrando al IFTS te vas dirigiendo al aula...");
+        entrada.setDescripcion("Una habitacion normal todo parece muy correcto...");
 
-        LugarBase aula = new LugarBase("Aula", "Ingresar al aula");
+        LugarBase habitacionRara = new LugarBase("Habitacion Rara", "Ingresar a la habitacion rara");
         
+        LugarBase habitacionSinSalida = new LugarBase("Habitacion sin salida ", "Una habitación sin salida");
+        habitacionSinSalida.setDescripcion("ES UNA TRAMPA, entraste a una habitacion sin salida");
         //Instancio las entidades y los items para crearlas? SIRVE?
         /*
         chequear por que no me anda el repositorio en conjunto de la navegacion
         */
-        Viviente elsa = new Viviente();
+        Viviente npc = new Viviente();
         Grog grog = new Grog();
             
         //Como conecto mi mundo con otros personajes        
         //la referencia del personaje no la pude hacer andar
-        entrada.agregarHablador(elsa.referencia("Un aldeano"));
-        entrada.agregarItem(grog.referencia("Una botella de grog"));
         
         //Como conecto mi mundo con otros mundos
-        entrada.agregarVecino(aula.referencia("Habitacion principal"));
-
-        aula.agregarVecino(entrada.referencia("Volver a la recepcion"));
+        entrada.agregarVecino(habitacionRara.referencia("Habitacion medio rara"));
+        habitacionRara.agregarVecino(habitacionSinSalida.referencia("Volver a la recepcion"));
         
+        habitacionSinSalida.agregarLuchador(npc.referencia("El ex suegro (esta siempre enojado)"));
+        habitacionRara.agregarItem(grog.referencia("Una botella de grog"));
         
         /*Importar al repositorio principal*/
         RepositorioPrincipal.agregar(entrada, "Entrada");
-        RepositorioPrincipal.agregar(aula, "Habitacion Principal");
-        RepositorioPrincipal.agregar(elsa, "Elsa Humerio");
+        RepositorioPrincipal.agregar(habitacionRara, "Habitacion principal");
+        RepositorioPrincipal.agregar(habitacionSinSalida, "Una habitacion sin salida");
+        RepositorioPrincipal.agregar(npc, "Elsa Humerio");
     }
 
 

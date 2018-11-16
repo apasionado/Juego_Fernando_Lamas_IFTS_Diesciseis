@@ -32,10 +32,10 @@ public class CreadorDeCombates extends Sistema{
         
         Opciones ops = new Opciones("Que estilo prefieres usar?");
         ops.agregar("fibonacci", "Fibonacci");
-        ops.agregar("ruleta rusa", "Ruleta Rusa");
-        ops.agregar("lejano oeste", "Lejano oeste");
+        ops.agregar("ruleta_rusa", "Ruleta Rusa");
+        ops.agregar("lejano_oeste", "Lejano oeste");
         ops.agregar("reacciona", "Rapido reacciona!");
-        ops.agregar("ya fue", "A los guantasos");
+        ops.agregar("ya_fue", "A los guantasos");
         Opcion eleccion = IOBase.elegirOpcion(ops);
         IOBase.mostrarTexto("Eligio: " + eleccion.getTexto());
         realizarAccion(eleccion);
@@ -46,20 +46,21 @@ public class CreadorDeCombates extends Sistema{
             case "fibonacci":
                 luchaFibonacci(per, ene);
                 break;
-            case "ya fue":
+            case "ya_fue":
                 aLosGuantasos(per, ene);
                 break;
-            case "ruleta rusa":
-                ruletaRusa(per, ene);
-                break;
-            case "lejano oeste":
+            case "lejano_oeste":
                 lejanoOeste(per,ene);
+                break;
+            case "ruleta_rusa":
+                ruletaRusa(per, ene);
                 break;
             case "reacciona":
                 reaccionaAhora(per,ene);
                 break;
             default:
-                aLosGuantasos(per, ene);
+                IOBase.borrar();
+                nuevaLucha(per,ene);
                 break;
         }
     }
@@ -352,42 +353,46 @@ public class CreadorDeCombates extends Sistema{
         nuevaLucha(per, ene);
     }
     public static String lejanoOeste(EntidadHumana p, Viviente e) throws InterruptedException{
+        IOBase.borrar();
         Random azar = new Random();
-        int random1 = azar.nextInt(1);
-        int random2 = azar.nextInt(1);
+        boolean random1 = azar.nextBoolean();
+        boolean random2 = azar.nextBoolean();
         String ganador = null;
         while(ganador == null){
                 IOBase.mostrarTexto("Ingrese cualquier tecla para continuar", Color.red, Color.white);
                 IOBase.ingresarTexto("Empieza la pelea, los contrincantes daran 5 pasos en direcciones opuestas");
             
-            for(int i = 0; i >= 4; i++){  
+            for(int i = 0; i <= 4; i++){
+                
                 IOBase.mostrarTexto("Pasos: " + i);
                 if(i == 4){
                     IOBase.mostrarTexto("BOOOM");
-                }
-                i++;
+            }
             }
             //SI AMBOS COINCIDEN ES EMPATE
-            if(!(random1 == 1 && random2 == 1)){
+            if(random1 == true && random2 == true){
                 IOBase.mostrarTexto("HAN ERRADO SUS TIROS. AMBOS ESTAN VIVOS. SON MALOS TIRANDO EH");
-            }else{
+                IOBase.mostrarTexto("");
+                ganador = null;
+                IOBase.mostrarTexto("No ha ganado ninguno");
+            }else if(random1 == false && random2 == false){
                 IOBase.mostrarTexto("AMBOS HAN ACERTADO Y ESTAN MUERTOS, SE DECLARA EMPATE");
-            }
-            //si random1 es 1 el jugador gana
-            if(random1 == 1){
+                ganador = p.getNombre() + " y " + e.getNombre();
+                IOBase.mostrarTexto("ganaron " + ganador);
+            }else if(random1 == true && random2 == false){
                 ganador = p.getNombre();
                 IOBase.mostrarTexto("QUE PUNTERIA! Acertaste un tiro en el hombro y su sangre se derrama lentamente");
                 IOBase.mostrarTexto("GANASTE!" + ganador);
-            }
-            //si random2 es 1 el jugador enemigo gana
-            if(random2 == 1){
-                ganador = e.getNombre();
+            
+            }else if(random1 == false && random2 == true){
+               ganador = e.getNombre();
                 IOBase.mostrarTexto("TE ACERTARON UN TIRO EN LA CABEZA");
-                IOBase.mostrarTexto("PERDISTE! TE HA GANADO" + ganador);
-            }
+                IOBase.mostrarTexto("PERDISTE! TE HA GANADO" + ganador); 
+            }    
         }
         
         String metioCualquierCosa = IOBase.ingresarTexto("Ingrese entidades validas");
         return metioCualquierCosa;
     }
-}
+        
+    }

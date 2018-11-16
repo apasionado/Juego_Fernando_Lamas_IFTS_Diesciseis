@@ -16,6 +16,7 @@ import static ifts16.pp.juego.entidades.Tipo.Item;
 import ifts16.pp.juego.sistemas.IOBase;
 import java.util.UUID;
 import juego_fernando_lamas_ifts_diesciseis.Componente.Item.Carga;
+import juego_fernando_lamas_ifts_diesciseis.Entidad.Item.Grog;
 
 /**
  *
@@ -41,8 +42,9 @@ public class Inventario extends Componente implements ConInventario {
             IOBase.mostrarTexto("No tienes espacio para cargar este item");
             return false;
         }else{
+            Grog grog = (Grog) item;
             
-            item.agregar(1);
+            this.RefInventario.agregar(grog.referencia("Grog"));
             IOBase.mostrarTexto("Se ha agregado 1 " + item.toString() + " a tu inventario");
             
             return true;
