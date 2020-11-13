@@ -9,12 +9,14 @@ procesador de textos como Microsoft Word o LibreOffice Writer; lo más
 recomendable es exportar el archivo al formato PDF, pero también se puede
 presentar en los formatos .DOC, .DOCX u .ODT. Dentro del documento se
 debe encontrar:
+
 a) La descripción del juego en términos generales, de qué trata y qué se
 puede hacer en el mismo, por qué piensan que puede resultar
 divertido, etc. Para esto se deberían evitar los términos técnicos y
 utilizar un lenguaje llano que pueda entender cualquier persona que lo
 lea, tenga conocimientos informáticos o no. La idea es que sea una
 introducción accesible a cualquier persona.
+
 b) Una enumeración y breve descripción de los Lugares, Personajes e
 Ítems que consideren relevantes para el juego ya que son importantes
 en la historia, plantean alguna idea interesante o esperan que el
@@ -28,12 +30,14 @@ agregado y por qué; así como una enumeración de los Componentes
 que la integran y los Sistemas con los que se encuentra relacionado.
 Se debe prestar particular atención a la Entidad que corresponde al
 Jugador.
+
 d) La descripción de los Componentes del juego. Cada una de ellos
 debería estar representada por una clase que tiene a Componente en
 su árbol de Herencia. Cada Componente debe ser descrito con al
 menos un breve texto que defina qué representa dentro de la Entidad,
 los atributos que contiene y cómo se espera que sea usado cada uno;
 así como el o los Sistemas con los que se encuentra involucrado.
+
 e) La descripción de los Sistemas del juego. Cada uno de ellos debería
 estar representado por una clase que tiene a Sistema en su árbol de
 Herencia. Cada Sistema debe ser descrito con al menos un texto
